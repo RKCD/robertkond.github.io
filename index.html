@@ -190,6 +190,21 @@ h2 {
 .pullquote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 3.2vw, 1.65rem); line-height: 1.4; max-width: 32ch; }
 .pull-answer { margin-top: .5rem; font-family: var(--display); font-weight: 600; font-size: clamp(1.3rem, 3.2vw, 1.65rem); color: var(--gold); }
 
+/* ---- Radar lanes ---- */
+.lanes { position: relative; }
+.lanes .lane { height: 3.4rem; }
+.lanes .lane + .lane { margin-top: .5rem; }
+.lane-label { position: absolute; left: 2%; top: 0; font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.arcs.ai path { stroke: var(--gold); opacity: .7; }
+.arcs.climate path { stroke: var(--teal); }
+.lanes .dot { width: 1.15rem; height: 1.15rem; font-size: .6rem; }
+.lanes .dot.climate { background: var(--teal); box-shadow: 0 0 0 3px var(--night-2), 0 0 14px rgba(111,199,184,.35); }
+.lanes .dot.past { background: #5B6579; color: var(--ivory); box-shadow: 0 0 0 3px var(--night-2); }
+.ghost.ai { border-color: var(--gold); }
+.k-dot.climate { background: var(--teal); }
+.k-arc { border-top-color: var(--muted); }
+.radar-list li[data-domain="climate"] .rl-n { color: var(--teal); }
+
 /* ---- Radar sources + freshness ---- */
 .rl-src { font-family: var(--mono); font-size: .66rem; color: var(--muted); margin-top: .3rem; }
 .rl-src a { color: var(--muted); }
@@ -274,20 +289,32 @@ h2 {
       <h2 id="h-radar-en">What’s coming, and when</h2>
       <div class="radar">
         <div class="track" aria-hidden="true">
-          <div class="lane">
+          <div class="lanes">
             <div class="past"></div>
-            <svg class="arcs" viewBox="0 0 1000 100" preserveAspectRatio="none">
-              <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
-              <path d="M526.3 100 Q686.6 20 846.9 100" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <div class="axis"></div>
+            <div class="lane">
+              <span class="lane-label">AI</span>
+              <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="axis"></div>
+              <span class="ghost ai" style="left:20.66%"></span>
+              <span class="dot" data-n="3" style="left:63.31%">3</span>
+            </div>
+            <div class="lane">
+              <span class="lane-label">Energy &amp; climate</span>
+              <svg class="arcs climate" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M20 100 Q193.5 10 366.9 100" vector-effect="non-scaling-stroke"/>
+                <path d="M339.7 100 Q499.6 -10 659.4 100" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="axis"></div>
+              <span class="ghost" style="left:2%"></span>
+              <span class="ghost" style="left:33.97%"></span>
+              <span class="dot climate past" data-n="1" style="left:14.96%">1</span>
+              <span class="dot climate" data-n="2" style="left:36.69%">2</span>
+              <span class="dot climate" data-n="4" style="left:65.94%">4</span>
+            </div>
             <div class="today"></div>
             <span class="today-label">Today</span>
-            <span class="ghost" style="left:52.63%"></span>
-            <span class="dot past" data-n="1" style="left:20.66%">1</span>
-            <span class="dot" data-n="2" style="left:31.34%">2</span>
-            <span class="dot" data-n="3" style="left:63.31%">3</span>
-            <span class="dot" data-n="4" style="left:84.69%">4</span>
           </div>
           <div class="years">
             <span class="yr" style="left:2%">2026</span>
@@ -296,37 +323,35 @@ h2 {
           </div>
         </div>
         <div class="key" aria-hidden="true">
-          <span><i class="k-dot"></i>fixed date</span>
           <span><i class="k-ghost"></i>old date</span>
-          <span><i class="k-arc"></i>moved by the Digital Omnibus</span>
+          <span><i class="k-arc"></i>moved</span>
           <span><i class="k-past"></i>already behind us</span>
         </div>
         <ol class="radar-list">
-          <li class="is-past" data-date="2026-08-02" data-n="1">
-            <span class="rl-n">1</span><span class="rl-date">2 Aug 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: transparency duties (Art 50)</div><div class="rl-sub">Chatbot disclosure, deepfake and synthetic-content labelling. This date was not deferred.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Reg (EU) 2024/1689</a>, Art 113</div></div>
+          <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
+            <span class="rl-n">1</span><span class="rl-date">29 May 2026</span>
+            <div class="rl-body"><div class="rl-title">EPBD: deadline to bring the recast buildings directive into national law</div><div class="rl-sub">In July 2026 the Commission sent formal notices to all 27 Member States for incomplete transposition.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">Directive (EU) 2024/1275</a>, Art 35</div></div>
             <span class="status"></span>
           </li>
-          <li data-date="2026-12-02" data-n="2">
-            <span class="rl-n">2</span><span class="rl-date">2 Dec 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: two dates added by the Digital Omnibus</div><div class="rl-sub">Machine-readable marking for generative systems already on the market, and new Art 5 prohibitions.</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 5 and Art 50(2), as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+          <li data-date="2027-02-01" data-n="2" data-domain="climate">
+            <span class="rl-n">2</span><span class="rl-date">1 Feb 2027</span>
+            <div class="rl-body"><div class="rl-title">CBAM: certificate sales start</div><div class="rl-sub">Authorised importers start buying certificates for goods imported in 2026.</div><div class="rl-moved">Was <s>1 Jan 2026</s>, moved 13 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">Reg (EU) 2025/2083</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2 Dec 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 113, as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
             <span class="status"></span>
           </li>
-          <li data-date="2028-08-02" data-n="4">
-            <span class="rl-n">4</span><span class="rl-date">2 Aug 2028</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk AI inside regulated products (Annex I)</div><div class="rl-sub">Medical devices, machinery, vehicles.</div><div class="rl-moved">Was <s>2 Aug 2027</s>, moved 12 months</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 113, as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+          <li data-date="2028-01-01" data-n="4" data-domain="climate">
+            <span class="rl-n">4</span><span class="rl-date">1 Jan 2028</span>
+            <div class="rl-body"><div class="rl-title">ETS2: carbon price on fuels for buildings and road transport</div><div class="rl-sub">Allowance auctions still start in 2027.</div><div class="rl-moved">Was <s>1 Jan 2027</s>, moved 12 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a></div></div>
             <span class="status"></span>
           </li>
         </ol>
       </div>
       <p class="freshness" data-fresh></p>
-      <p class="note">Dates come from the legal corpus in my tool’s code, never from the model.</p>
-      <!-- TODO-ROBERT: energia/kliima rida lisatakse siis, kui Robert annab kontrollitud kuupäeva + allika; see asendab ühe AI Acti rea, ei lisandu juurde. -->
+      <p class="note">AI Act dates come from my tool’s legal corpus, never from the model.</p>
     </div>
   </section>
 
@@ -415,20 +440,32 @@ h2 {
       <h2 id="h-radar-et">Mis tuleb ja millal</h2>
       <div class="radar">
         <div class="track" aria-hidden="true">
-          <div class="lane">
+          <div class="lanes">
             <div class="past"></div>
-            <svg class="arcs" viewBox="0 0 1000 100" preserveAspectRatio="none">
-              <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
-              <path d="M526.3 100 Q686.6 20 846.9 100" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <div class="axis"></div>
+            <div class="lane">
+              <span class="lane-label">AI</span>
+              <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="axis"></div>
+              <span class="ghost ai" style="left:20.66%"></span>
+              <span class="dot" data-n="3" style="left:63.31%">3</span>
+            </div>
+            <div class="lane">
+              <span class="lane-label">Energia ja kliima</span>
+              <svg class="arcs climate" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M20 100 Q193.5 10 366.9 100" vector-effect="non-scaling-stroke"/>
+                <path d="M339.7 100 Q499.6 -10 659.4 100" vector-effect="non-scaling-stroke"/>
+              </svg>
+              <div class="axis"></div>
+              <span class="ghost" style="left:2%"></span>
+              <span class="ghost" style="left:33.97%"></span>
+              <span class="dot climate past" data-n="1" style="left:14.96%">1</span>
+              <span class="dot climate" data-n="2" style="left:36.69%">2</span>
+              <span class="dot climate" data-n="4" style="left:65.94%">4</span>
+            </div>
             <div class="today"></div>
             <span class="today-label">Täna</span>
-            <span class="ghost" style="left:52.63%"></span>
-            <span class="dot past" data-n="1" style="left:20.66%">1</span>
-            <span class="dot" data-n="2" style="left:31.34%">2</span>
-            <span class="dot" data-n="3" style="left:63.31%">3</span>
-            <span class="dot" data-n="4" style="left:84.69%">4</span>
           </div>
           <div class="years">
             <span class="yr" style="left:2%">2026</span>
@@ -437,37 +474,35 @@ h2 {
           </div>
         </div>
         <div class="key" aria-hidden="true">
-          <span><i class="k-dot"></i>kindel kuupäev</span>
           <span><i class="k-ghost"></i>vana kuupäev</span>
-          <span><i class="k-arc"></i>nihutas Digital Omnibus</span>
+          <span><i class="k-arc"></i>nihkus</span>
           <span><i class="k-past"></i>juba möödas</span>
         </div>
         <ol class="radar-list">
-          <li class="is-past" data-date="2026-08-02" data-n="1">
-            <span class="rl-n">1</span><span class="rl-date">2. aug 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: läbipaistvuskohustused (art 50)</div><div class="rl-sub">Vestlusrobotist teavitamine, süvavõltsingute ja sünteetilise sisu märgistamine. Seda tähtaega edasi ei lükatud.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">määrus (EL) 2024/1689</a>, art 113</div></div>
+          <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
+            <span class="rl-n">1</span><span class="rl-date">29. mai 2026</span>
+            <div class="rl-body"><div class="rl-title">EPBD: uuendatud hoonete direktiivi ülevõtmise tähtaeg</div><div class="rl-sub">Juulis 2026 saatis komisjon kõigile 27 liikmesriigile märgukirja puuduliku ülevõtmise pärast.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">direktiiv (EL) 2024/1275</a>, art 35</div></div>
             <span class="status"></span>
           </li>
-          <li data-date="2026-12-02" data-n="2">
-            <span class="rl-n">2</span><span class="rl-date">2. dets 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: kaks Digital Omnibusega lisandunud tähtaega</div><div class="rl-sub">Masinloetav märgistus juba turul olevatele generatiivsetele süsteemidele ja uued art 5 keelud.</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 5 ja art 50 lg 2, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+          <li data-date="2027-02-01" data-n="2" data-domain="climate">
+            <span class="rl-n">2</span><span class="rl-date">1. veebr 2027</span>
+            <div class="rl-body"><div class="rl-title">CBAM: sertifikaatide müük algab</div><div class="rl-sub">Volitatud importijad hakkavad ostma sertifikaate 2026. aastal imporditud kaupade eest.</div><div class="rl-moved">Oli <s>1. jaan 2026</s>, nihkus 13 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">määrus (EL) 2025/2083</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2. dets 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 113, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a></div></div>
             <span class="status"></span>
           </li>
-          <li data-date="2028-08-02" data-n="4">
-            <span class="rl-n">4</span><span class="rl-date">2. aug 2028</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga AI reguleeritud toodetes (I lisa)</div><div class="rl-sub">Meditsiiniseadmed, masinad, sõidukid.</div><div class="rl-moved">Oli <s>2. aug 2027</s>, nihkus 12 kuud</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 113, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+          <li data-date="2028-01-01" data-n="4" data-domain="climate">
+            <span class="rl-n">4</span><span class="rl-date">1. jaan 2028</span>
+            <div class="rl-body"><div class="rl-title">ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind</div><div class="rl-sub">Lubatud heitkoguse ühikute enampakkumised algavad siiski 2027.</div><div class="rl-moved">Oli <s>1. jaan 2027</s>, nihkus 12 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a></div></div>
             <span class="status"></span>
           </li>
         </ol>
       </div>
       <p class="freshness" data-fresh></p>
-      <p class="note">Kuupäevad tulevad tööriista koodis olevast õiguskorpusest, mitte mudelist.</p>
-      <!-- TODO-ROBERT: energia/kliima rida lisatakse siis, kui Robert annab kontrollitud kuupäeva + allika; see asendab ühe AI Acti rea, ei lisandu juurde. -->
+      <p class="note">AI Acti kuupäevad tulevad tööriista õiguskorpusest, mitte mudelist.</p>
     </div>
   </section>
 
@@ -536,8 +571,8 @@ h2 {
   var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
   var tp = Math.min(98, Math.max(2, 2 + (today - START) / (END - START) * 96));
   var words = {
-    en: { live: "In force", week: function (n) { return "In " + n + (n === 1 ? " week" : " weeks"); }, month: function (n) { return "In " + n + " months"; } },
-    et: { live: "Kehtib", week: function (n) { return n + " nädala pärast"; }, month: function (n) { return n + " kuu pärast"; } }
+    en: { live: "In force", passed: "Deadline passed", week: function (n) { return "In " + n + (n === 1 ? " week" : " weeks"); }, month: function (n) { return "In " + n + " months"; } },
+    et: { live: "Kehtib", passed: "Tähtaeg möödas", week: function (n) { return n + " nädala pärast"; }, month: function (n) { return n + " kuu pärast"; } }
   };
   document.querySelectorAll(".page[data-lang]").forEach(function (page) {
     var w = words[page.getAttribute("data-lang")];
@@ -552,25 +587,26 @@ h2 {
       li.classList.toggle("is-past", past);
       st.classList.toggle("live", past);
       if (dot) dot.classList.toggle("past", past);
-      st.textContent = past ? w.live : days < 70 ? w.week(Math.max(1, Math.round(days / 7))) : w.month(Math.round(days / 30.44));
+      st.textContent = past ? (li.getAttribute("data-kind") === "deadline" ? w.passed : w.live) : days < 70 ? w.week(Math.max(1, Math.round(days / 7))) : w.month(Math.round(days / 30.44));
     });
   });
 
-  /* ---------- Freshness: one constant, synced with the tool ---------- */
-  // Keep in sync with eu-ai-act-checker/legal_corpus.py: CORPUS_VERIFIED_ON and CORPUS_STALE_AFTER_DAYS.
-  var CORPUS = { verifiedOn: "2026-08-24", staleAfterDays: 90 };
+  /* ---------- Freshness: check dates in one place ---------- */
+  // aiAct: keep in sync with eu-ai-act-checker/legal_corpus.py CORPUS_VERIFIED_ON.
+  // climate: the day the energy and climate rows were last checked by hand against the acts.
+  var CHECKS = { aiAct: "2026-08-24", climate: "2026-10-16", staleAfterDays: 90 };
   var MON = {
     en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     et: ["jaan", "veebr", "märts", "apr", "mai", "juuni", "juuli", "aug", "sept", "okt", "nov", "dets"]
   };
+  function day(iso) { var q = iso.split("-"); return Date.UTC(+q[0], +q[1] - 1, +q[2]); }
   function fmt(ms, l) {
     var d = new Date(ms);
     return l === "et" ? d.getUTCDate() + ". " + MON.et[d.getUTCMonth()] + " " + d.getUTCFullYear()
                       : d.getUTCDate() + " " + MON.en[d.getUTCMonth()] + " " + d.getUTCFullYear();
   }
-  var vp = CORPUS.verifiedOn.split("-");
-  var verified = Date.UTC(+vp[0], +vp[1] - 1, +vp[2]);
-  var due = verified + CORPUS.staleAfterDays * 86400000;
+  var ai = day(CHECKS.aiAct), cl = day(CHECKS.climate);
+  var due = Math.min(ai, cl) + CHECKS.staleAfterDays * 86400000;
   var overdue = today > due;
   document.querySelectorAll(".page[data-lang]").forEach(function (page) {
     var l = page.getAttribute("data-lang");
@@ -578,10 +614,10 @@ h2 {
     if (!el) return;
     el.classList.toggle("overdue", overdue);
     el.textContent = l === "et"
-      ? (overdue ? "Kontroll on hilinenud — kuupäevad võivad olla aegunud. Viimati kontrollitud käsitsi: " + fmt(verified, l) + "."
-                 : "Kuupäevad käsitsi kontrollitud: " + fmt(verified, l) + " · järgmine kontroll: " + fmt(due, l))
-      : (overdue ? "Check overdue — dates may be outdated. Last checked by hand: " + fmt(verified, l) + "."
-                 : "Dates checked by hand: " + fmt(verified, l) + " · next check due: " + fmt(due, l));
+      ? (overdue ? "Kontroll on hilinenud — kuupäevad võivad olla aegunud. Viimati kontrollitud: AI Act " + fmt(ai, l) + ", energia ja kliima " + fmt(cl, l) + "."
+                 : "Kuupäevad käsitsi kontrollitud: AI Act " + fmt(ai, l) + ", energia ja kliima " + fmt(cl, l) + " · järgmine kontroll: " + fmt(due, l))
+      : (overdue ? "Check overdue — dates may be outdated. Last checked: AI Act " + fmt(ai, l) + ", energy and climate " + fmt(cl, l) + "."
+                 : "Dates checked by hand: AI Act " + fmt(ai, l) + ", energy and climate " + fmt(cl, l) + " · next check due: " + fmt(due, l));
   });
 
   /* ---------- Copy email ---------- */
