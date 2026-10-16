@@ -26,6 +26,7 @@
   --gold-hi: #F2D8A4;
   --teal: #6FC7B8;
   --on-gold: #0A0F1C;
+  --warn: #E8A3A3;
   --display: "Fraunces", Georgia, "Times New Roman", serif;
   --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -96,8 +97,8 @@ a:hover { color: var(--gold-hi); }
   box-shadow: 0 0 0 6px rgba(230,194,125,.06), 0 0 48px 6px rgba(230,194,125,.14);
 }
 .domains {
-  margin-top: 1.5rem; font-family: var(--mono); font-size: .76rem; letter-spacing: .2em; text-transform: uppercase;
-  color: var(--ivory); display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem .9rem;
+  margin-top: 1.5rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--muted); display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem .9rem;
 }
 .domains .sep { color: var(--gold); opacity: .8; }
 .availability {
@@ -189,12 +190,28 @@ h2 {
 .pullquote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 3.2vw, 1.65rem); line-height: 1.4; max-width: 32ch; }
 .pull-answer { margin-top: .5rem; font-family: var(--display); font-weight: 600; font-size: clamp(1.3rem, 3.2vw, 1.65rem); color: var(--gold); }
 
-/* ---- Steps ---- */
-.steps { list-style: none; padding: 0; margin-top: 1.4rem; border-top: 1px solid var(--line); }
-.steps li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .2rem .9rem; padding-block: 1.05rem; border-bottom: 1px solid var(--line); }
-.st-n { font-family: var(--mono); font-size: .76rem; color: var(--gold); padding-top: .25rem; }
-.st-title { font-family: var(--display); font-weight: 600; font-size: 1.14rem; }
-.st-proof { grid-column: 2; color: var(--muted); font-size: .97rem; max-width: 58ch; }
+/* ---- Radar sources + freshness ---- */
+.rl-src { font-family: var(--mono); font-size: .66rem; color: var(--muted); margin-top: .3rem; }
+.rl-src a { color: var(--muted); }
+.rl-src a:hover { color: var(--gold); }
+.freshness { margin-top: 1rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.freshness:empty { display: none; }
+.freshness::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--teal); flex: none; }
+.freshness.overdue { color: var(--warn); }
+.freshness.overdue::before { background: var(--warn); }
+
+/* ---- Case ---- */
+.case { margin-top: 1.4rem; background: rgba(16,24,40,.72); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem clamp(1rem, 4vw, 1.8rem); }
+.case-title { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+.case-title a { color: var(--ivory); text-decoration-color: var(--gold); }
+.case-src { margin-top: .3rem; font-family: var(--mono); font-size: .68rem; color: var(--muted); }
+.case-rows { margin: 1rem 0 0; border-top: 1px solid var(--line); }
+.case-rows > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .2rem 1rem; padding-block: .75rem; border-bottom: 1px solid var(--line); }
+.case-rows dt { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); padding-top: .25rem; }
+.case-rows dd { margin: 0; color: var(--muted); font-size: .95rem; min-width: 0; }
+.principle { margin-top: 1.1rem; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.08rem; color: var(--ivory); }
+@media (max-width: 34rem) { .case-rows > div { grid-template-columns: 1fr; } }
+.lead-2 { margin-top: .8rem; }
 
 /* ---- Contact ---- */
 .contact { text-align: center; }
@@ -242,14 +259,12 @@ h2 {
     <div class="wrap">
       <img class="portrait" src="robert-avatar.jpg" alt="Robert Kond" width="112" height="112">
       <p class="domains"><span>Climate</span><span class="sep">·</span><span>Energy</span><span class="sep">·</span><span>Digital</span><span class="sep">·</span><span>AI</span></p>
-      <p class="availability"><span class="pulse" aria-hidden="true"></span>Open to new challenges and opportunities</p>
       <h1 id="h1-en">The technology is ready. Most organizations aren’t. <em>I work in that gap.</em></h1>
-      <p class="lead">I go into a messy system, such as a regulation, a ministry or a pile of data nobody reads. I map it, see what is coming and when, explain it to the people who have to act, and build the tool that does the work. My domain is EU regulation: climate, energy and AI.</p>
+      <p class="lead">I help organizations understand what changing regulation and technology mean for them, decide what to do, and turn it into a working workflow or AI tool. I don’t stop at analysis — I build solutions that can be tested, checked and kept running.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-en">Send me a problem</a>
         <a class="btn btn-ghost" href="#radar-en">See what’s coming</a>
       </div>
-      <p class="method"><span class="lbl">how I work</span>Go in <i class="diamond"></i> Map <i class="diamond"></i> See ahead <i class="diamond"></i> Translate <i class="diamond"></i> Build <i class="diamond"></i> Keep running</p>
     </div>
   </section>
 
@@ -289,27 +304,29 @@ h2 {
         <ol class="radar-list">
           <li class="is-past" data-date="2026-08-02" data-n="1">
             <span class="rl-n">1</span><span class="rl-date">2 Aug 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: transparency duties (Art 50)</div><div class="rl-sub">Chatbot disclosure, deepfake and synthetic-content labelling. This date was not deferred.</div></div>
-            <span class="status live">In force</span>
+            <div class="rl-body"><div class="rl-title">AI Act: transparency duties (Art 50)</div><div class="rl-sub">Chatbot disclosure, deepfake and synthetic-content labelling. This date was not deferred.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">Reg (EU) 2024/1689</a>, Art 113</div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2026-12-02" data-n="2">
             <span class="rl-n">2</span><span class="rl-date">2 Dec 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: two dates added by the Digital Omnibus</div><div class="rl-sub">Machine-readable marking for generative systems already on the market, and new Art 5 prohibitions.</div></div>
-            <span class="status">In 7 weeks</span>
+            <div class="rl-body"><div class="rl-title">AI Act: two dates added by the Digital Omnibus</div><div class="rl-sub">Machine-readable marking for generative systems already on the market, and new Art 5 prohibitions.</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 5 and Art 50(2), as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2 Dec 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div></div>
-            <span class="status">In 14 months</span>
+            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 113, as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2028-08-02" data-n="4">
             <span class="rl-n">4</span><span class="rl-date">2 Aug 2028</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk AI inside regulated products (Annex I)</div><div class="rl-sub">Medical devices, machinery, vehicles.</div><div class="rl-moved">Was <s>2 Aug 2027</s>, moved 12 months</div></div>
-            <span class="status">In 22 months</span>
+            <div class="rl-body"><div class="rl-title">AI Act: high-risk AI inside regulated products (Annex I)</div><div class="rl-sub">Medical devices, machinery, vehicles.</div><div class="rl-moved">Was <s>2 Aug 2027</s>, moved 12 months</div><div class="rl-src">Source: Reg (EU) 2024/1689, Art 113, as amended by <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
         </ol>
       </div>
-      <p class="note">AI Act dates are looked up in code from the legal corpus behind my readiness tool, last checked by hand on 24 August 2026. The model never writes a date. The changes come from <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Regulation (EU) 2026/1744</a>.</p>
+      <p class="freshness" data-fresh></p>
+      <p class="note">Dates come from the legal corpus in my tool’s code, never from the model.</p>
+      <!-- TODO-ROBERT: energia/kliima rida lisatakse siis, kui Robert annab kontrollitud kuupäeva + allika; see asendab ühe AI Acti rea, ei lisandu juurde. -->
     </div>
   </section>
 
@@ -323,16 +340,21 @@ h2 {
   <section class="block" aria-labelledby="h-how-en">
     <div class="wrap">
       <p class="kicker">How I work</p>
-      <h2 id="h-how-en">From a messy system to a tool that keeps running</h2>
-      <ol class="steps">
-        <li><span class="st-n">01</span><span class="st-title">Go in</span><p class="st-proof">I started in the field, maintaining boiler houses and heat meters. Later I worked on climate and renewable energy policy at Estonia’s Ministry of Regional Affairs and Agriculture: Climate Act, REKK 2030, NECP, biomethane regulation, EU working groups.</p></li>
-        <li><span class="st-n">02</span><span class="st-title">Map it</span><p class="st-proof">I keep the AI Act’s ten timing regimes in one corpus, each with its date, legal basis and amending act.</p></li>
-        <li><span class="st-n">03</span><span class="st-title">See what’s coming</span><p class="st-proof">The Digital Omnibus moved the high-risk dates by 16 and 12 months and has been in force since 27 July 2026. General-purpose models still quote the old dates.</p></li>
-        <li><span class="st-n">04</span><span class="st-title">Translate it</span><p class="st-proof">One page per AI system: risk class, obligations for your role, deadlines, three next steps, and what the tool is unsure about.</p></li>
-        <li><span class="st-n">05</span><span class="st-title">Build the tool</span><p class="st-proof"><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a>. What has to be right lives in code: the model picks a category, and code supplies the date and the legal basis. Five evaluation cases with known answers. Access by invitation.</p></li>
-        <li><span class="st-n">06</span><span class="st-title">Keep it running</span><p class="st-proof">Every answer carries the corpus version and the date a human last checked it. A freshness check flags the corpus once that check is 90 days old.</p></li>
-      </ol>
-      <p class="note">Tools: Claude, MCP, Python, Microsoft Azure (AZ-104). Estonian University of Life Sciences: BSc in environmental protection, MSc in agricultural production and marketing. Earlier: agritech sales in precision farming. Estonian, English, German.</p>
+      <h2 id="h-how-en">Notice → map → translate → build → keep it running.</h2>
+      <div class="case">
+        <h3 class="case-title">One case: <a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
+        <p class="case-src">From the tool’s evaluation set.</p>
+        <dl class="case-rows">
+          <div><dt>Input</dt><dd>“We screen incoming CVs automatically, ranking candidates by suitability score before a recruiter reviews them.” An HR startup, as the provider.</dd></div>
+          <div><dt>The model</dt><dd>Picks from a fixed list: role provider, risk class high-risk (Annex III, Art 6(2)).</dd></div>
+          <div><dt>The code</dt><dd>Looks up the date and legal basis in the corpus: 2 December 2027, Article 113 as amended by Regulation (EU) 2026/1744.</dd></div>
+          <div><dt>A person</dt><dd>Checks the tool’s confidence and information gaps. A lawyer makes the final call.</dd></div>
+          <div><dt>Status</dt><dd>Launched August 2026, access by invitation. Outcome not yet measured.</dd></div>
+        </dl>
+        <p class="principle">Anything that must be right lives in code or rules. The model handles language.</p>
+      </div>
+      <p class="note">Background: boiler-house and heat-meter maintenance in the field, then climate and renewable energy policy at Estonia’s Ministry of Regional Affairs and Agriculture: Climate Act, REKK 2030, NECP, biomethane regulation, EU working groups.</p>
+      <p class="note">Tools: Claude, MCP, Microsoft Azure (AZ-104). Estonian University of Life Sciences: BSc in environmental protection, MSc in agricultural production and marketing. Earlier: agritech sales in precision farming. Estonian, English, German.<!-- TODO-ROBERT: "Python" on tööriistade realt eemaldatud, sest CV-s seda pole. Lisa tagasi ainult siis, kui see on sinu oskus. --></p>
     </div>
   </section>
 
@@ -340,8 +362,8 @@ h2 {
     <div class="wrap">
       <p class="kicker">Contact</p>
       <h2 id="h-contact-en">Bring me an in-between problem</h2>
-      <p class="lead">Two sentences are enough: what is changing, and who has to act. I’ll tell you whether it’s mine.</p>
-      <p class="note">As a role, this is a regulatory translator or someone at the policy–engineering border. As a project, it starts with one problem.</p>
+      <p class="lead">Regulation is changing, the data exists, but the organization doesn’t know what to do next — or does it all by hand. I map the requirements, find the changes that matter and build the workflow or AI tool that turns information into action.</p>
+      <p class="lead lead-2">Open to a long-term role or a specific project. In two or three sentences: what is changing, who has to act, and where the current process gets stuck.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Write to me</a>
@@ -355,7 +377,7 @@ h2 {
 <footer class="site-foot">
   <div class="wrap">
     <p>Informational only. Nothing on this page is legal advice.</p>
-    <p>Last updated: 15 October 2026 · Robert Kond · Estonia</p>
+    <p>Last updated: 16 October 2026 · Robert Kond · Estonia</p>
   </div>
 </footer>
 </div>
@@ -378,14 +400,12 @@ h2 {
     <div class="wrap">
       <img class="portrait" src="robert-avatar.jpg" alt="Robert Kond" width="112" height="112">
       <p class="domains"><span>Kliima</span><span class="sep">·</span><span>Energia</span><span class="sep">·</span><span>Digi</span><span class="sep">·</span><span>AI</span></p>
-      <p class="availability"><span class="pulse" aria-hidden="true"></span>Avatud uutele väljakutsetele ja võimalustele</p>
       <h1 id="h1-et">Tehnoloogia on valmis. Enamik organisatsioone ei ole. <em>Mina töötan selles vahes.</em></h1>
-      <p class="lead">Lähen segasesse süsteemi, olgu see regulatsioon, ministeerium või andmehunnik, mida keegi ei loe. Kaardistan selle, näen, mis tuleb ja millal, selgitan seda neile, kes peavad tegutsema, ja ehitan tööriista, mis töö ära teeb. Minu valdkond on EL-i regulatsioon: kliima, energia ja AI.</p>
+      <p class="lead">Aitan organisatsioonidel mõista, mida muutuvad regulatsioonid ja tehnoloogiad nende jaoks tähendavad, otsustada, mida teha, ning muuta see toimivaks töövooguks või AI-tööriistaks. Ma ei piirdu analüüsiga — ehitan lahendusi, mida saab testida, kontrollida ja töös hoida.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-et">Saada mulle probleem</a>
         <a class="btn btn-ghost" href="#radar-et">Vaata, mis tuleb</a>
       </div>
-      <p class="method"><span class="lbl">kuidas ma töötan</span>Lähen sisse <i class="diamond"></i> Kaardistan <i class="diamond"></i> Näen ette <i class="diamond"></i> Tõlgin <i class="diamond"></i> Ehitan <i class="diamond"></i> Hoian töös</p>
     </div>
   </section>
 
@@ -425,27 +445,29 @@ h2 {
         <ol class="radar-list">
           <li class="is-past" data-date="2026-08-02" data-n="1">
             <span class="rl-n">1</span><span class="rl-date">2. aug 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: läbipaistvuskohustused (art 50)</div><div class="rl-sub">Vestlusrobotist teavitamine, süvavõltsingute ja sünteetilise sisu märgistamine. Seda tähtaega edasi ei lükatud.</div></div>
-            <span class="status live">Kehtib</span>
+            <div class="rl-body"><div class="rl-title">AI Act: läbipaistvuskohustused (art 50)</div><div class="rl-sub">Vestlusrobotist teavitamine, süvavõltsingute ja sünteetilise sisu märgistamine. Seda tähtaega edasi ei lükatud.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">määrus (EL) 2024/1689</a>, art 113</div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2026-12-02" data-n="2">
             <span class="rl-n">2</span><span class="rl-date">2. dets 2026</span>
-            <div class="rl-body"><div class="rl-title">AI Act: kaks Digital Omnibusega lisandunud tähtaega</div><div class="rl-sub">Masinloetav märgistus juba turul olevatele generatiivsetele süsteemidele ja uued art 5 keelud.</div></div>
-            <span class="status">7 nädala pärast</span>
+            <div class="rl-body"><div class="rl-title">AI Act: kaks Digital Omnibusega lisandunud tähtaega</div><div class="rl-sub">Masinloetav märgistus juba turul olevatele generatiivsetele süsteemidele ja uued art 5 keelud.</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 5 ja art 50 lg 2, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2. dets 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div></div>
-            <span class="status">14 kuu pärast</span>
+            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 113, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
           <li data-date="2028-08-02" data-n="4">
             <span class="rl-n">4</span><span class="rl-date">2. aug 2028</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga AI reguleeritud toodetes (I lisa)</div><div class="rl-sub">Meditsiiniseadmed, masinad, sõidukid.</div><div class="rl-moved">Oli <s>2. aug 2027</s>, nihkus 12 kuud</div></div>
-            <span class="status">22 kuu pärast</span>
+            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga AI reguleeritud toodetes (I lisa)</div><div class="rl-sub">Meditsiiniseadmed, masinad, sõidukid.</div><div class="rl-moved">Oli <s>2. aug 2027</s>, nihkus 12 kuud</div><div class="rl-src">Allikas: määrus (EL) 2024/1689, art 113, muudetud <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusega (EL) 2026/1744</a></div></div>
+            <span class="status"></span>
           </li>
         </ol>
       </div>
-      <p class="note">AI Acti kuupäevad võetakse koodis minu valmisolekutööriista õiguskorpusest, mille kontrollisin viimati käsitsi 24. augustil 2026. Mudel ei kirjuta kunagi kuupäeva. Muudatused tulevad <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrusest (EL) 2026/1744</a>.</p>
+      <p class="freshness" data-fresh></p>
+      <p class="note">Kuupäevad tulevad tööriista koodis olevast õiguskorpusest, mitte mudelist.</p>
+      <!-- TODO-ROBERT: energia/kliima rida lisatakse siis, kui Robert annab kontrollitud kuupäeva + allika; see asendab ühe AI Acti rea, ei lisandu juurde. -->
     </div>
   </section>
 
@@ -459,16 +481,21 @@ h2 {
   <section class="block" aria-labelledby="h-how-et">
     <div class="wrap">
       <p class="kicker">Kuidas ma töötan</p>
-      <h2 id="h-how-et">Segasest süsteemist tööriistani, mis töötab edasi</h2>
-      <ol class="steps">
-        <li><span class="st-n">01</span><span class="st-title">Lähen sisse</span><p class="st-proof">Alustasin väljal, katlamajade ja soojusarvestite hooldusest. Hiljem tegin Regionaal- ja Põllumajandusministeeriumis kliima- ja taastuvenergiapoliitikat: Kliimaseadus, REKK 2030, NECP, biometaani regulatsioon, EL-i töörühmad.</p></li>
-        <li><span class="st-n">02</span><span class="st-title">Kaardistan</span><p class="st-proof">Hoian AI Acti kümmet ajastusrežiimi ühes korpuses, igaühel kuupäev, õiguslik alus ja muutev akt.</p></li>
-        <li><span class="st-n">03</span><span class="st-title">Näen ette</span><p class="st-proof">Digital Omnibus nihutas suure riskiga süsteemide tähtaegu 16 ja 12 kuu võrra ning kehtib alates 27. juulist 2026. Üldotstarbelised mudelid tsiteerivad endiselt vanu kuupäevi.</p></li>
-        <li><span class="st-n">04</span><span class="st-title">Tõlgin</span><p class="st-proof">Üks lehekülg iga AI-süsteemi kohta: riskiklass, sinu rolli kohustused, tähtajad, kolm järgmist sammu ja see, milles tööriist kindel ei ole.</p></li>
-        <li><span class="st-n">05</span><span class="st-title">Ehitan</span><p class="st-proof"><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a>. See, mis peab olema õige, on koodis: mudel valib kategooria, kood lisab kuupäeva ja õigusliku aluse. Viis teadaoleva vastusega hindamisjuhtumit. Ligipääs kutse alusel.</p></li>
-        <li><span class="st-n">06</span><span class="st-title">Hoian töös</span><p class="st-proof">Iga vastus sisaldab korpuse versiooni ja kuupäeva, mil inimene seda viimati kontrollis. Värskuskontroll annab märku, kui see kontroll on 90 päeva vana.</p></li>
-      </ol>
-      <p class="note">Tööriistad: Claude, MCP, Python, Microsoft Azure (AZ-104). Eesti Maaülikool: keskkonnakaitse bakalaureus ning põllumajandussaaduste tootmise ja turustamise magister. Varem: agritech-müük täppispõllumajanduses. Eesti, inglise ja saksa keel.</p>
+      <h2 id="h-how-et">Märkan → kaardistan → tõlgin → ehitan → hoian töös.</h2>
+      <div class="case">
+        <h3 class="case-title">Üks juhtum: <a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
+        <p class="case-src">Tööriista hindamiskomplektist.</p>
+        <dl class="case-rows">
+          <div><dt>Sisend</dt><dd>„We screen incoming CVs automatically, ranking candidates by suitability score before a recruiter reviews them.” HR-idufirma, pakkuja rollis.</dd></div>
+          <div><dt>Mudel</dt><dd>Valib kindlast loetelust: roll pakkuja, riskiklass suure riskiga süsteem (III lisa, art 6 lg 2).</dd></div>
+          <div><dt>Kood</dt><dd>Leiab korpusest kuupäeva ja õigusliku aluse: 2. detsember 2027, artikkel 113, muudetud määrusega (EL) 2026/1744.</dd></div>
+          <div><dt>Inimene</dt><dd>Kontrollib tööriista kindlustaset ja infolünki. Lõpliku otsuse teeb jurist.</dd></div>
+          <div><dt>Staatus</dt><dd>Käivitatud augustis 2026, ligipääs kutse alusel. Tulemust pole veel mõõdetud.</dd></div>
+        </dl>
+        <p class="principle">Kõik, mis peab olema õige, on koodis või reeglites. Mudel tegeleb keelega.</p>
+      </div>
+      <p class="note">Taust: katlamajade ja soojusarvestite hooldus väljal, seejärel kliima- ja taastuvenergiapoliitika Regionaal- ja Põllumajandusministeeriumis: Kliimaseadus, REKK 2030, NECP, biometaani regulatsioon, EL-i töörühmad.</p>
+      <p class="note">Tööriistad: Claude, MCP, Microsoft Azure (AZ-104). Eesti Maaülikool: keskkonnakaitse bakalaureus ning põllumajandussaaduste tootmise ja turustamise magister. Varem: agritech-müük täppispõllumajanduses. Eesti, inglise ja saksa keel.</p>
     </div>
   </section>
 
@@ -476,8 +503,8 @@ h2 {
     <div class="wrap">
       <p class="kicker">Kontakt</p>
       <h2 id="h-contact-et">Too mulle vahepealne probleem</h2>
-      <p class="lead">Kahest lausest piisab: mis muutub ja kes peab tegutsema. Ütlen, kas see on minu teema.</p>
-      <p class="note">Rollina on see regulatiiv-tõlk või inimene poliitika ja tehnika piiril. Projektina algab see ühest probleemist.</p>
+      <p class="lead">Regulatsioon muutub, andmed on olemas, kuid organisatsioon ei tea, mida järgmisena teha — või teeb kõike käsitsi. Kaardistan nõuded, leian olulised muutused ja ehitan töövoo või AI-tööriista, mis muudab info tegevuseks.</p>
+      <p class="lead lead-2">Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile. Kirjelda paari lausega: mis muutub, kes peab tegutsema ja kus protsess takerdub.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Kirjuta mulle</a>
@@ -491,7 +518,7 @@ h2 {
 <footer class="site-foot">
   <div class="wrap">
     <p>Ainult informatiivne. Miski sellel lehel ei ole õigusnõustamine.</p>
-    <p>Viimati uuendatud: 15. oktoober 2026 · Robert Kond · Eesti</p>
+    <p>Viimati uuendatud: 16. oktoober 2026 · Robert Kond · Eesti</p>
   </div>
 </footer>
 </div>
@@ -527,6 +554,34 @@ h2 {
       if (dot) dot.classList.toggle("past", past);
       st.textContent = past ? w.live : days < 70 ? w.week(Math.max(1, Math.round(days / 7))) : w.month(Math.round(days / 30.44));
     });
+  });
+
+  /* ---------- Freshness: one constant, synced with the tool ---------- */
+  // Keep in sync with eu-ai-act-checker/legal_corpus.py: CORPUS_VERIFIED_ON and CORPUS_STALE_AFTER_DAYS.
+  var CORPUS = { verifiedOn: "2026-08-24", staleAfterDays: 90 };
+  var MON = {
+    en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    et: ["jaan", "veebr", "märts", "apr", "mai", "juuni", "juuli", "aug", "sept", "okt", "nov", "dets"]
+  };
+  function fmt(ms, l) {
+    var d = new Date(ms);
+    return l === "et" ? d.getUTCDate() + ". " + MON.et[d.getUTCMonth()] + " " + d.getUTCFullYear()
+                      : d.getUTCDate() + " " + MON.en[d.getUTCMonth()] + " " + d.getUTCFullYear();
+  }
+  var vp = CORPUS.verifiedOn.split("-");
+  var verified = Date.UTC(+vp[0], +vp[1] - 1, +vp[2]);
+  var due = verified + CORPUS.staleAfterDays * 86400000;
+  var overdue = today > due;
+  document.querySelectorAll(".page[data-lang]").forEach(function (page) {
+    var l = page.getAttribute("data-lang");
+    var el = page.querySelector("[data-fresh]");
+    if (!el) return;
+    el.classList.toggle("overdue", overdue);
+    el.textContent = l === "et"
+      ? (overdue ? "Kontroll on hilinenud — kuupäevad võivad olla aegunud. Viimati kontrollitud käsitsi: " + fmt(verified, l) + "."
+                 : "Kuupäevad käsitsi kontrollitud: " + fmt(verified, l) + " · järgmine kontroll: " + fmt(due, l))
+      : (overdue ? "Check overdue — dates may be outdated. Last checked by hand: " + fmt(verified, l) + "."
+                 : "Dates checked by hand: " + fmt(verified, l) + " · next check due: " + fmt(due, l));
   });
 
   /* ---------- Copy email ---------- */
