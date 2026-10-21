@@ -6,7 +6,7 @@
 <title>Robert Kond</title>
 <meta name="description" content="Robert Kond, former climate and renewable energy specialist at an Estonian ministry. EU climate, energy and AI rules, and tools that keep the answers tied to the source.">
 <meta property="og:title" content="Robert Kond">
-<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see what is opening up in climate, energy and AI and build tools that keep the answers tied to the source.">
+<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see what is becoming possible in climate, energy and AI, and build tools that keep the answers tied to the source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rkcd.github.io/robertkond.github.io/">
 <meta property="og:image" content="https://rkcd.github.io/robertkond.github.io/og-image.jpg">
@@ -145,90 +145,30 @@ h2 {
 }
 .note { margin-top: 1.3rem; font-size: .92rem; color: var(--muted); max-width: 62ch; }
 
-/* ---- Radar ---- */
-.radar { background: rgba(16,24,40,.72); border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem clamp(1rem, 4vw, 1.8rem) 1.2rem; margin-top: 1.4rem; }
-.track { margin-top: .6rem; }
-.lane { position: relative; height: 5rem; }
-.past-zone { position: absolute; left: 2%; top: 0; bottom: 0; width: 25.14%; background: rgba(236,231,219,.045); border-radius: 4px 0 0 4px; }
-.axis { position: absolute; left: 2%; right: 2%; bottom: 0; height: 1px; background: #3A4660; }
-.arcs { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.arcs path { fill: none; stroke: var(--teal); stroke-width: 1.4; stroke-dasharray: 5 4; opacity: .85; }
-.today { position: absolute; left: 27.14%; top: .95rem; bottom: -.35rem; border-left: 1.5px dashed var(--ivory); opacity: .75; }
-.today-label { position: absolute; left: 27.14%; top: 0; transform: translateX(-50%); font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ivory); white-space: nowrap; }
-.dot {
-  position: absolute; bottom: 0; transform: translate(-50%, 50%); width: 1.3rem; height: 1.3rem; border-radius: 50%;
-  display: grid; place-items: center; background: var(--gold); color: var(--on-gold);
-  font-family: var(--mono); font-size: .64rem; font-weight: 500; z-index: 2; box-shadow: 0 0 0 3px var(--night-2), 0 0 14px rgba(230,194,125,.35);
-}
-.dot.past { background: #5B6579; color: var(--ivory); box-shadow: 0 0 0 3px var(--night-2); }
-.ghost { position: absolute; bottom: 0; transform: translate(-50%, 50%); width: .75rem; height: .75rem; border-radius: 50%; border: 1.5px dashed var(--teal); background: var(--night-2); z-index: 1; }
-.years { position: relative; height: 1.7rem; }
-.yr { position: absolute; top: .45rem; transform: translateX(-50%); font-family: var(--mono); font-size: .64rem; color: var(--muted); }
-.yr::before { content: ""; position: absolute; left: 50%; top: -.45rem; height: .3rem; border-left: 1px solid #3A4660; }
-.key { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; margin-top: .3rem; font-family: var(--mono); font-size: .66rem; color: var(--muted); }
-.key span { display: inline-flex; align-items: center; gap: .4rem; }
-.k-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--gold); display: inline-block; }
-.k-ghost { width: .55rem; height: .55rem; border-radius: 50%; border: 1.5px dashed var(--teal); display: inline-block; }
-.k-arc { width: 1.2rem; border-top: 1.5px dashed var(--teal); display: inline-block; }
-.k-past { width: .9rem; height: .55rem; background: rgba(236,231,219,.08); border: 1px solid var(--line); display: inline-block; }
-.radar-list { list-style: none; padding: 0; margin-top: 1.3rem; border-top: 1px solid var(--line); }
-.radar-list li { display: grid; grid-template-columns: 1.4rem 6.6rem minmax(0, 1fr) auto; gap: .3rem .8rem; align-items: baseline; padding-block: .8rem; border-bottom: 1px solid var(--line); }
-.radar-list li:last-child { border-bottom: 0; }
-.rl-n { font-family: var(--mono); font-size: .72rem; color: var(--gold); }
-.is-past .rl-n { color: var(--muted); }
-.rl-date { font-family: var(--mono); font-size: .78rem; font-variant-numeric: tabular-nums; }
-.rl-title { font-weight: 600; font-size: .98rem; line-height: 1.4; }
-.rl-sub { font-size: .9rem; color: var(--muted); margin-top: .1rem; }
-.rl-moved { font-family: var(--mono); font-size: .7rem; color: var(--teal); margin-top: .25rem; }
-.rl-moved s { color: var(--muted); }
-.status { font-family: var(--mono); font-size: .66rem; white-space: nowrap; padding: .15rem .5rem; border-radius: 4px; background: rgba(230,194,125,.12); color: var(--gold); }
+/* ---- Openings ---- */
+.section-lead { color: var(--muted); max-width: 62ch; margin-bottom: 1.4rem; }
+.openings { list-style: none; padding: 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); }
+.opening { display: flex; flex-direction: column; gap: .55rem; border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.25rem 1.05rem; background: rgba(16,24,40,.6); }
+.opening h3 { font-family: var(--display); font-weight: 600; font-size: 1.12rem; line-height: 1.3; }
+.opening p { font-size: .95rem; }
+.op-me { color: var(--muted); font-style: italic; border-left: 2px solid rgba(230,194,125,.5); padding-left: .7rem; }
+.op-when { margin-top: auto; padding-top: .65rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: .68rem !important; line-height: 1.7; color: var(--muted); }
+.op-when a { color: var(--muted); }
+.op-when a:hover { color: var(--gold); }
+.op-date { color: var(--ivory); margin-right: .25rem; }
+.op-when .status { margin-left: .2rem; }
+.status { font-family: var(--mono); font-size: .66rem; white-space: nowrap; padding: .12rem .45rem; border-radius: 4px; background: rgba(230,194,125,.12); color: var(--gold); }
 .status.live { background: transparent; border: 1px solid var(--line); color: var(--muted); }
-@media (max-width: 34rem) {
-  .radar-list li { grid-template-columns: 1.4rem minmax(0, 1fr) auto; }
-  .rl-body { grid-column: 2 / 4; }
-}
+.status:empty { display: none; }
 
-/* ---- Pullquote ---- */
-.pull { padding-block: 3rem; border-top: 1px solid var(--line); }
-.pullquote { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.3rem, 3.2vw, 1.65rem); line-height: 1.4; max-width: 32ch; }
-.pull-answer { margin-top: .5rem; font-family: var(--display); font-weight: 600; font-size: clamp(1.3rem, 3.2vw, 1.65rem); color: var(--gold); }
-
-/* ---- Radar lanes ---- */
-.lanes { position: relative; }
-.lanes .lane { height: 3.4rem; }
-.lanes .lane + .lane { margin-top: .5rem; }
-.lane-label { position: absolute; left: 2%; top: 0; font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-.arcs.ai path { stroke: var(--gold); opacity: .7; }
-.arcs.climate path { stroke: var(--teal); }
-.lanes .dot { width: 1.15rem; height: 1.15rem; font-size: .6rem; }
-.lanes .dot.climate { background: var(--teal); box-shadow: 0 0 0 3px var(--night-2), 0 0 14px rgba(111,199,184,.35); }
-.lanes .dot.past { background: #5B6579; color: var(--ivory); box-shadow: 0 0 0 3px var(--night-2); }
-.ghost.ai { border-color: var(--gold); }
-.k-dot.climate { background: var(--teal); }
-.k-arc { border-top-color: var(--muted); }
-.radar-list li[data-domain="climate"] .rl-n { color: var(--teal); }
-
-/* ---- Radar sources + freshness ---- */
-.rl-src { font-family: var(--mono); font-size: .66rem; color: var(--muted); margin-top: .3rem; }
-.rl-src a { color: var(--muted); }
-.rl-src a:hover { color: var(--gold); }
+/* ---- Freshness ---- */
 .freshness { margin-top: 1rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
 .freshness:empty { display: none; }
 .freshness::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--teal); flex: none; }
 .freshness.overdue { color: var(--warn); }
 .freshness.overdue::before { background: var(--warn); }
 
-/* ---- Case ---- */
-.case { margin-top: 1.4rem; background: rgba(16,24,40,.72); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem clamp(1rem, 4vw, 1.8rem); }
-.case-title { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
-.case-title a { color: var(--ivory); text-decoration-color: var(--gold); }
-.case-src { margin-top: .3rem; font-family: var(--mono); font-size: .68rem; color: var(--muted); }
-.case-rows { margin: 1rem 0 0; border-top: 1px solid var(--line); }
-.case-rows > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .2rem 1rem; padding-block: .75rem; border-bottom: 1px solid var(--line); }
-.case-rows dt { font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); padding-top: .25rem; }
-.case-rows dd { margin: 0; color: var(--muted); font-size: .95rem; min-width: 0; }
 .principle { margin-top: 1.1rem; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.08rem; color: var(--ivory); }
-@media (max-width: 34rem) { .case-rows > div { grid-template-columns: 1fr; } }
 .lead-2 { margin-top: .8rem; }
 
 /* ---- Contact ---- */
@@ -266,8 +206,6 @@ section[id] { scroll-margin-top: 64px; }
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 100%);
   mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 100%);
 }
-.rl-opens { font-size: .9rem; color: var(--ivory); margin-top: .35rem; }
-.rl-opens b { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-right: .4rem; }
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(10,15,28,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .site-head .wrap { padding-top: .7rem; padding-bottom: .7rem; }
 .site-name { display: inline-flex; align-items: center; gap: .6rem; }
@@ -318,10 +256,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <h1 id="h1-en" class="name">Robert Kond</h1>
       <p class="domains"><span>Climate</span><span class="sep">·</span><span>Energy</span><span class="sep">·</span><span>Digital</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">The technology is ready. Most organizations aren’t. <em>I work in that gap.</em></p>
-      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is opening up in climate, energy and AI, what EU rules mean for it in practice, and I build tools that keep the answers tied to the source.</p>
+      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is becoming possible in climate, energy and AI, and how to get there, rules included. I build tools that keep the answers tied to the source.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-en">Write to me</a>
-        <a class="btn btn-ghost" href="#radar-en">See what it opens up</a>
+        <a class="btn btn-ghost" href="#radar-en">See what’s possible</a>
       </div>
     </div>
   </section>
@@ -373,72 +311,34 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <section class="block" id="radar-en" aria-labelledby="h-radar-en">
     <div class="wrap">
       <p class="kicker">On my radar</p>
-      <h2 id="h-radar-en">What’s changing, and what it opens up</h2>
-      <div class="radar">
-        <div class="track" aria-hidden="true">
-          <div class="lanes">
-            <div class="past-zone"></div>
-            <div class="lane">
-              <span class="lane-label">AI</span>
-              <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <div class="axis"></div>
-              <span class="ghost ai" style="left:20.66%"></span>
-              <span class="dot" data-n="3" style="left:63.31%">3</span>
-            </div>
-            <div class="lane">
-              <span class="lane-label">Energy &amp; climate</span>
-              <svg class="arcs climate" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M20 100 Q193.5 10 366.9 100" vector-effect="non-scaling-stroke"/>
-                <path d="M339.7 100 Q499.6 -10 659.4 100" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <div class="axis"></div>
-              <span class="ghost" style="left:2%"></span>
-              <span class="ghost" style="left:33.97%"></span>
-              <span class="dot climate past" data-n="1" style="left:14.96%">1</span>
-              <span class="dot climate" data-n="2" style="left:36.69%">2</span>
-              <span class="dot climate" data-n="4" style="left:65.94%">4</span>
-            </div>
-            <div class="today"></div>
-            <span class="today-label">Today</span>
-          </div>
-          <div class="years">
-            <span class="yr" style="left:2%">2026</span>
-            <span class="yr" style="left:33.97%">2027</span>
-            <span class="yr" style="left:65.94%">2028</span>
-          </div>
-        </div>
-        <div class="key" aria-hidden="true">
-          <span><i class="k-ghost"></i>old date</span>
-          <span><i class="k-arc"></i>moved</span>
-          <span><i class="k-past"></i>already behind us</span>
-        </div>
-        <ol class="radar-list">
-          <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
-            <span class="rl-n">1</span><span class="rl-date">29 May 2026</span>
-            <div class="rl-body"><div class="rl-title">EPBD: deadline to bring the recast buildings directive into national law</div><div class="rl-sub">In July 2026 the Commission sent formal notices to all 27 Member States for incomplete transposition.</div><div class="rl-opens"><b>Opens up</b>Room for renovation and building-data services once national rules are fixed.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">Directive (EU) 2024/1275</a>, Art 35</div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2027-02-01" data-n="2" data-domain="climate">
-            <span class="rl-n">2</span><span class="rl-date">1 Feb 2027</span>
-            <div class="rl-body"><div class="rl-title">CBAM: certificate sales start</div><div class="rl-sub">Authorised importers start buying certificates for goods imported in 2026.</div><div class="rl-moved">Was <s>1 Jan 2026</s>, moved 13 months</div><div class="rl-opens"><b>Opens up</b>Demand for reliable, product-level emissions data and its verification.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">Reg (EU) 2025/2083</a></div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2027-12-02" data-n="3">
-            <span class="rl-n">3</span><span class="rl-date">2 Dec 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-opens"><b>Opens up</b>More time to build high-risk AI with logging and evidence in from the start.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2028-01-01" data-n="4" data-domain="climate">
-            <span class="rl-n">4</span><span class="rl-date">1 Jan 2028</span>
-            <div class="rl-body"><div class="rl-title">ETS2: carbon price on fuels for buildings and road transport</div><div class="rl-sub">Allowance auctions still start in 2027.</div><div class="rl-moved">Was <s>1 Jan 2027</s>, moved 12 months</div><div class="rl-opens"><b>Opens up</b>One more year to prepare clean heating and transport before the price starts.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a></div></div>
-            <span class="status"></span>
-          </li>
-        </ol>
-      </div>
+      <h2 id="h-radar-en">What’s becoming possible</h2>
+      <p class="section-lead">Clean power keeps getting cheaper to produce. AI can already do work that used to need a whole team. Rules mostly decide the timing, not the direction. These are the openings I follow.</p>
+      <ul class="openings">
+        <li class="opening">
+          <h3>Heat from cheap, clean power</h3>
+          <p>When wind and sun produce more than is needed, power gets cheap. Heat pumps, electric boilers and heat storage can use those hours to keep homes and towns warm.</p>
+          <p class="op-me">I’ve serviced boiler houses and heat substations, and worked on renewable energy at the ministry.</p>
+          <p class="op-when" data-date="2028-01-01"><span class="op-date">1 Jan 2028</span> ETS2: carbon price on fuels for buildings and road transport · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Farms that also make energy</h3>
+          <p>Manure and crop residues can become biomethane: local fuel, lower emissions and a second income for the farm.</p>
+          <p class="op-me">I worked on biomethane at the ministry, studied agriculture and sold precision farming services.</p>
+        </li>
+        <li class="opening">
+          <h3>Products with a known carbon footprint</h3>
+          <p>Europe is starting to price the carbon in imported steel, cement, fertilisers and other goods. Producers who can show low, verified emissions have something to sell.</p>
+          <p class="op-me">I worked on the Climate Act and in EU working groups at the ministry.</p>
+          <p class="op-when" data-date="2027-02-01"><span class="op-date">1 Feb 2027</span> CBAM: certificate sales start · <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">Reg (EU) 2025/2083</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Small teams with AI agents</h3>
+          <p>AI agents can already read documents, data and rules and do work that used to need a department. The open question is trust: what did the agent do, and who answers for it?</p>
+          <p class="op-me">I build AI tools myself. Two of them are on this page.</p>
+          <p class="op-when" data-date="2027-12-02"><span class="op-date">2 Dec 2027</span> AI Act: high-risk systems (Annex III) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a> <span class="status"></span></p>
+        </li>
+      </ul>
       <p class="freshness" data-fresh></p>
-      <p class="note">AI Act dates come from my tool’s legal corpus, never from the model.</p>
     </div>
   </section>
 
@@ -486,10 +386,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <h1 id="h1-et" class="name">Robert Kond</h1>
       <p class="domains"><span>Kliima</span><span class="sep">·</span><span>Energia</span><span class="sep">·</span><span>Digi</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">Tehnoloogia on valmis. Enamik organisatsioone ei ole. <em>Mina töötan selles vahes.</em></p>
-      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s avaneb ja mida EL-i reeglid selle jaoks päriselt tähendavad, ning ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
+      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s võimalikuks muutub ja kuidas sinna jõuda, reeglid kaasa arvatud. Ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-et">Kirjuta mulle</a>
-        <a class="btn btn-ghost" href="#radar-et">Vaata, mida see avab</a>
+        <a class="btn btn-ghost" href="#radar-et">Vaata, mis on võimalik</a>
       </div>
     </div>
   </section>
@@ -541,72 +441,34 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <section class="block" id="radar-et" aria-labelledby="h-radar-et">
     <div class="wrap">
       <p class="kicker">Minu radaril</p>
-      <h2 id="h-radar-et">Mis muutub ja mida see avab</h2>
-      <div class="radar">
-        <div class="track" aria-hidden="true">
-          <div class="lanes">
-            <div class="past-zone"></div>
-            <div class="lane">
-              <span class="lane-label">AI</span>
-              <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M206.6 100 Q419.9 -20 633.1 100" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <div class="axis"></div>
-              <span class="ghost ai" style="left:20.66%"></span>
-              <span class="dot" data-n="3" style="left:63.31%">3</span>
-            </div>
-            <div class="lane">
-              <span class="lane-label">Energia ja kliima</span>
-              <svg class="arcs climate" viewBox="0 0 1000 100" preserveAspectRatio="none">
-                <path d="M20 100 Q193.5 10 366.9 100" vector-effect="non-scaling-stroke"/>
-                <path d="M339.7 100 Q499.6 -10 659.4 100" vector-effect="non-scaling-stroke"/>
-              </svg>
-              <div class="axis"></div>
-              <span class="ghost" style="left:2%"></span>
-              <span class="ghost" style="left:33.97%"></span>
-              <span class="dot climate past" data-n="1" style="left:14.96%">1</span>
-              <span class="dot climate" data-n="2" style="left:36.69%">2</span>
-              <span class="dot climate" data-n="4" style="left:65.94%">4</span>
-            </div>
-            <div class="today"></div>
-            <span class="today-label">Täna</span>
-          </div>
-          <div class="years">
-            <span class="yr" style="left:2%">2026</span>
-            <span class="yr" style="left:33.97%">2027</span>
-            <span class="yr" style="left:65.94%">2028</span>
-          </div>
-        </div>
-        <div class="key" aria-hidden="true">
-          <span><i class="k-ghost"></i>vana kuupäev</span>
-          <span><i class="k-arc"></i>nihkus</span>
-          <span><i class="k-past"></i>juba möödas</span>
-        </div>
-        <ol class="radar-list">
-          <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
-            <span class="rl-n">1</span><span class="rl-date">29. mai 2026</span>
-            <div class="rl-body"><div class="rl-title">EPBD: uuendatud hoonete direktiivi ülevõtmise tähtaeg</div><div class="rl-sub">Juulis 2026 saatis komisjon kõigile 27 liikmesriigile märgukirja puuduliku ülevõtmise pärast.</div><div class="rl-opens"><b>Avab</b>Ruumi renoveerimise ja hoone andmete teenustele, kui riiklikud reeglid on paigas.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">direktiiv (EL) 2024/1275</a>, art 35</div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2027-02-01" data-n="2" data-domain="climate">
-            <span class="rl-n">2</span><span class="rl-date">1. veebr 2027</span>
-            <div class="rl-body"><div class="rl-title">CBAM: sertifikaatide müük algab</div><div class="rl-sub">Volitatud importijad hakkavad ostma sertifikaate 2026. aastal imporditud kaupade eest.</div><div class="rl-moved">Oli <s>1. jaan 2026</s>, nihkus 13 kuud</div><div class="rl-opens"><b>Avab</b>Nõudlus usaldusväärsetele toote tasemel heiteandmetele ja nende kontrollile.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">määrus (EL) 2025/2083</a></div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2027-12-02" data-n="3">
-            <span class="rl-n">3</span><span class="rl-date">2. dets 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-opens"><b>Avab</b>Rohkem aega ehitada suure riskiga AI nii, et logid ja tõendid on algusest peale sees.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a></div></div>
-            <span class="status"></span>
-          </li>
-          <li data-date="2028-01-01" data-n="4" data-domain="climate">
-            <span class="rl-n">4</span><span class="rl-date">1. jaan 2028</span>
-            <div class="rl-body"><div class="rl-title">ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind</div><div class="rl-sub">Lubatud heitkoguse ühikute enampakkumised algavad siiski 2027.</div><div class="rl-moved">Oli <s>1. jaan 2027</s>, nihkus 12 kuud</div><div class="rl-opens"><b>Avab</b>Üks aasta lisa valmistuda puhta kütte ja transpordi üleminekuks enne hinna algust.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a></div></div>
-            <span class="status"></span>
-          </li>
-        </ol>
-      </div>
+      <h2 id="h-radar-et">Mis muutub võimalikuks</h2>
+      <p class="section-lead">Puhta elektri tootmine läheb aina odavamaks. AI suudab juba teha tööd, milleks varem oli vaja tervet meeskonda. Reeglid otsustavad enamasti ajastuse, mitte suuna. Need on võimalused, mida ma jälgin.</p>
+      <ul class="openings">
+        <li class="opening">
+          <h3>Soojus odavast puhtast elektrist</h3>
+          <p>Kui tuul ja päike toodavad rohkem, kui parasjagu vaja, läheb elekter odavaks. Soojuspumbad, elektrikatlad ja soojussalvestid saavad neid tunde kasutada, et kodud ja linnad oleksid soojad.</p>
+          <p class="op-me">Olen hooldanud katlamaju ja soojussõlmi ning tegelenud ministeeriumis taastuvenergiaga.</p>
+          <p class="op-when" data-date="2028-01-01"><span class="op-date">1. jaan 2028</span> ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Talud, mis toodavad ka energiat</h3>
+          <p>Sõnnikust ja taimejäätmetest saab biometaani: kohalik kütus, väiksem heide ja talule teine sissetulek.</p>
+          <p class="op-me">Tegelesin ministeeriumis biometaaniga, õppisin põllumajandust ja müüsin täppisviljeluse teenuseid.</p>
+        </li>
+        <li class="opening">
+          <h3>Tooted, mille süsinikujalajälg on teada</h3>
+          <p>Euroopa hakkab hinnastama imporditud terase, tsemendi, väetiste ja muude kaupade süsinikku. Tootjal, kes suudab näidata madalat ja kontrollitud heidet, on, mida müüa.</p>
+          <p class="op-me">Tegelesin ministeeriumis kliimaseadusega ja osalesin EL-i töögruppides.</p>
+          <p class="op-when" data-date="2027-02-01"><span class="op-date">1. veebr 2027</span> CBAM: sertifikaatide müük algab · <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">määrus (EL) 2025/2083</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Väikesed meeskonnad AI-agentidega</h3>
+          <p>AI-agendid suudavad juba lugeda dokumente, andmeid ja reegleid ning teha tööd, milleks varem oli vaja tervet osakonda. Lahtine küsimus on usaldus: mida agent tegi ja kes selle eest vastutab?</p>
+          <p class="op-me">Ehitan AI-tööriistu ise. Kaks neist on sellel lehel.</p>
+          <p class="op-when" data-date="2027-12-02"><span class="op-date">2. dets 2027</span> AI Act: suure riskiga süsteemid (III lisa) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a> <span class="status"></span></p>
+        </li>
+      </ul>
       <p class="freshness" data-fresh></p>
-      <p class="note">AI Acti kuupäevad tulevad tööriista õiguskorpusest, mitte mudelist.</p>
     </div>
   </section>
 
@@ -641,29 +503,22 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
 
   function visible() { return document.querySelector(".page[data-lang]:not([hidden])"); }
 
-  /* ---------- Radar: today marker and countdowns ---------- */
-  var START = Date.UTC(2026, 0, 1), END = Date.UTC(2029, 0, 1);
+  /* ---------- Openings: countdowns on the timing lines ---------- */
   var now = new Date();
   var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
-  var tp = Math.min(98, Math.max(2, 2 + (today - START) / (END - START) * 96));
   var words = {
-    en: { live: "In force", passed: "Deadline passed", week: function (n) { return "In " + n + (n === 1 ? " week" : " weeks"); }, month: function (n) { return "In " + n + " months"; } },
-    et: { live: "Kehtib", passed: "Tähtaeg möödas", week: function (n) { return n + " nädala pärast"; }, month: function (n) { return n + " kuu pärast"; } }
+    en: { live: "In force", week: function (n) { return "In " + n + (n === 1 ? " week" : " weeks"); }, month: function (n) { return "In " + n + " months"; } },
+    et: { live: "Kehtib", week: function (n) { return n + " nädala pärast"; }, month: function (n) { return n + " kuu pärast"; } }
   };
   document.querySelectorAll(".page[data-lang]").forEach(function (page) {
     var w = words[page.getAttribute("data-lang")];
-    page.querySelectorAll(".today, .today-label").forEach(function (el) { el.style.left = tp + "%"; });
-    page.querySelectorAll(".past-zone").forEach(function (el) { el.style.width = (tp - 2) + "%"; });
-    page.querySelectorAll(".radar-list li[data-date]").forEach(function (li) {
-      var p = li.getAttribute("data-date").split("-");
+    page.querySelectorAll("[data-date]").forEach(function (el) {
+      var p = el.getAttribute("data-date").split("-");
       var days = Math.round((Date.UTC(+p[0], +p[1] - 1, +p[2]) - today) / 86400000);
-      var st = li.querySelector(".status");
-      var dot = page.querySelector('.dot[data-n="' + li.getAttribute("data-n") + '"]');
+      var st = el.querySelector(".status");
       var past = days <= 0;
-      li.classList.toggle("is-past", past);
       st.classList.toggle("live", past);
-      if (dot) dot.classList.toggle("past", past);
-      st.textContent = past ? (li.getAttribute("data-kind") === "deadline" ? w.passed : w.live) : days < 70 ? w.week(Math.max(1, Math.round(days / 7))) : w.month(Math.round(days / 30.44));
+      st.textContent = past ? w.live : days < 70 ? w.week(Math.max(1, Math.round(days / 7))) : w.month(Math.round(days / 30.44));
     });
   });
 
