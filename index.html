@@ -81,12 +81,12 @@ a:hover { color: var(--gold-hi); }
 .site-name { font-family: var(--display); font-weight: 600; font-size: 1.05rem; color: var(--ivory); text-decoration: none; }
 .head-right { display: flex; align-items: center; gap: 1rem; }
 .lang-btn {
-  font: inherit; font-family: var(--mono); font-size: .74rem; letter-spacing: .08em;
+  font: inherit; font-family: var(--mono); font-size: .8rem; letter-spacing: .08em;
   color: var(--muted); background: transparent; border: 1px solid var(--line);
-  border-radius: 999px; padding: .26rem .75rem; cursor: pointer;
+  border-radius: 999px; padding: .55rem .9rem; min-height: 2.5rem; cursor: pointer;
 }
 .lang-btn:hover { color: var(--gold); border-color: var(--gold); }
-.head-link { font-family: var(--mono); font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+.head-link { font-family: var(--mono); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); text-decoration: none; padding-block: .7rem; }
 
 /* ---- Hero ---- */
 .hero {
@@ -100,7 +100,7 @@ a:hover { color: var(--gold-hi); }
   box-shadow: 0 0 0 6px rgba(230,194,125,.06), 0 0 48px 6px rgba(230,194,125,.14);
 }
 .domains {
-  margin-top: 1.5rem; font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase;
+  margin-top: 1.5rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .2em; text-transform: uppercase;
   color: var(--muted); display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem .9rem;
 }
 .domains .sep { color: var(--gold); opacity: .8; }
@@ -128,17 +128,11 @@ h1 em { font-style: italic; font-weight: 500; color: var(--gold); }
 .btn-gold:hover { background: var(--gold-hi); color: var(--on-gold); }
 .btn-ghost { background: rgba(10,15,28,.4); color: var(--ivory); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-.method {
-  margin-top: 2.8rem; padding-top: .9rem; border-top: 1px solid rgba(230,194,125,.35);
-  font-family: var(--mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold);
-  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .45rem .9rem;
-}
-.method .lbl { color: var(--muted); letter-spacing: .1em; text-transform: none; width: 100%; font-size: .72rem; margin-bottom: .1rem; }
 .diamond { width: .32rem; height: .32rem; background: var(--gold); transform: rotate(45deg); opacity: .7; display: inline-block; }
 
 /* ---- Sections ---- */
 section.block { padding-block: 3.6rem; border-top: 1px solid var(--line); }
-.kicker { font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.kicker { font-family: var(--mono); font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
 h2 {
   font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 3.4vw, 1.95rem);
   line-height: 1.22; text-wrap: balance; margin-bottom: 1.1rem; max-width: 26ch;
@@ -152,17 +146,17 @@ h2 {
 .opening h3 { font-family: var(--display); font-weight: 600; font-size: 1.12rem; line-height: 1.3; }
 .opening p { font-size: .95rem; }
 .op-me { color: var(--muted); font-style: italic; border-left: 2px solid rgba(230,194,125,.5); padding-left: .7rem; }
-.op-when { margin-top: auto; padding-top: .65rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: .68rem !important; line-height: 1.7; color: var(--muted); }
-.op-when a { color: var(--muted); }
+.op-when { margin-top: auto; padding-top: .65rem; border-top: 1px solid var(--line); font-family: var(--mono); font-size: .78rem !important; line-height: 1.8; color: var(--muted); }
+.op-when a { color: var(--muted); padding-block: .25rem; }
 .op-when a:hover { color: var(--gold); }
 .op-date { color: var(--ivory); margin-right: .25rem; }
 .op-when .status { margin-left: .2rem; }
-.status { font-family: var(--mono); font-size: .66rem; white-space: nowrap; padding: .12rem .45rem; border-radius: 4px; background: rgba(230,194,125,.12); color: var(--gold); }
+.status { font-family: var(--mono); font-size: .76rem; white-space: nowrap; padding: .12rem .45rem; border-radius: 4px; background: rgba(230,194,125,.12); color: var(--gold); }
 .status.live { background: transparent; border: 1px solid var(--line); color: var(--muted); }
 .status:empty { display: none; }
 
 /* ---- Freshness ---- */
-.freshness { margin-top: 1rem; font-family: var(--mono); font-size: .72rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.freshness { margin-top: 1rem; font-family: var(--mono); font-size: .78rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
 .freshness:empty { display: none; }
 .freshness::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--teal); flex: none; }
 .freshness.overdue { color: var(--warn); }
@@ -176,12 +170,12 @@ h2 {
 .contact h2, .contact .lead, .contact .note { margin-inline: auto; }
 .email-text { margin-top: 1.4rem; font-family: var(--display); font-weight: 600; font-size: clamp(1.2rem, 3.8vw, 1.7rem); word-break: break-all; }
 .contact .cta-row { margin-top: 1.4rem; }
-.copy-status { display: block; margin-top: .6rem; font-family: var(--mono); font-size: .72rem; color: var(--gold); min-height: 1.2em; }
+.copy-status { display: block; margin-top: .6rem; font-family: var(--mono); font-size: .8rem; color: var(--gold); min-height: 1.2em; }
 
 /* ---- Footer ---- */
 .site-foot { border-top: 1px solid var(--line); }
 .site-foot .wrap { padding-block: 1.8rem max(2.4rem, env(safe-area-inset-bottom, 0px)); display: grid; gap: .5rem; }
-.site-foot p { font-family: var(--mono); font-size: .7rem; color: var(--muted); letter-spacing: .04em; }
+.site-foot p { font-family: var(--mono); font-size: .78rem; color: var(--muted); letter-spacing: .04em; }
 
 /* ---- Load ---- */
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
@@ -221,16 +215,19 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
 .exp { list-style: none; padding: 0; margin: 1.2rem 0 0; border-top: 1px solid var(--line); }
 .exp li { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: .2rem 1.4rem; padding-block: .85rem; border-bottom: 1px solid var(--line); }
 .exp .role { display: block; font-weight: 600; color: var(--ivory); font-size: .98rem; }
-.exp .org { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .03em; color: var(--gold); margin-top: .15rem; }
+.exp .org { display: block; font-family: var(--mono); font-size: .78rem; letter-spacing: .03em; color: var(--gold); margin-top: .15rem; }
 .exp .what { margin: 0; color: var(--muted); font-size: .95rem; }
 @media (max-width: 40rem) { .exp li { grid-template-columns: 1fr; } }
 .edu { margin-top: 1.2rem; color: var(--muted); font-size: .92rem; max-width: 62ch; }
 .projects { display: grid; gap: 1rem; margin-top: 1.2rem; }
 .project { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; background: rgba(16,24,40,.6); }
 .project h3 { font-family: var(--display); font-weight: 600; font-size: 1.12rem; }
-.project h3 a { color: var(--ivory); text-decoration-color: var(--gold); }
+.project h3 a { color: var(--ivory); text-decoration-color: var(--gold); display: inline-block; padding-block: .35rem; }
 .project p { margin-top: .35rem; color: var(--muted); font-size: .95rem; }
-.project .meta { margin-top: .55rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; }
+.project .meta { margin-top: .55rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .03em; }
+.questions { list-style: none; padding: 0; display: grid; gap: .9rem; margin-top: 1.2rem; }
+.questions .example { margin: 0; max-width: none; font-size: 1.08rem; }
+.questions li + li { border-top: 1px solid var(--line); padding-top: .9rem; }
 .example { margin: 1.2rem auto 0; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.45; color: var(--ivory); max-width: 46ch; }
 </style>
 </head>
@@ -258,7 +255,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <p class="domains"><span>Climate</span><span class="sep">·</span><span>Energy</span><span class="sep">·</span><span>Digital</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">Change creates openings.<br><em>I build what goes through them.</em></p>
       <p class="tagline-sub">The technology is ready. Most organizations aren’t.</p>
-      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is becoming possible in climate, energy and AI, and how to get there, rules included. I build tools that keep the answers tied to the source.</p>
+      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is becoming possible in climate, energy and AI, and turn it into a plan with owners, deadlines and sources, or a tool whose answers stay tied to the source.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-en">Write to me</a>
         <a class="btn btn-ghost" href="#radar-en">See what’s possible</a>
@@ -299,11 +296,11 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
         <article class="project">
           <h3><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
           <p>Describe an AI system and it tells you what the AI Act means for it. The dates come from code that follows the legal text, not from the model’s memory.</p>
-          <p class="meta">Live · access by invitation</p>
+          <p class="meta">Live · access by invitation · the first load can take up to a minute</p>
         </article>
         <article class="project">
           <h3><a href="https://rkcd.github.io/agentide-vastutus/">Agent liability map for Estonia</a></h3>
-          <p>Seven situations where an AI agent gets something wrong: which rules apply, who is liable and where to report it. Every claim links to its source.</p>
+          <p>Seven situations where an AI agent gets something wrong: which rules apply, who is liable and where to report it. Claims come with source links.</p>
           <p class="meta">In Estonian · version 0.3 · not legal advice</p>
         </article>
       </div>
@@ -318,7 +315,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <ul class="openings">
         <li class="opening">
           <h3>Heat from cheap, clean power</h3>
-          <p>When wind and sun produce more than is needed, power gets cheap. Heat pumps, electric boilers and heat storage can use those hours to keep homes and towns warm.</p>
+          <p>When wind and sun produce more than is needed, power gets cheap. Heat pumps, electric boilers and heat storage can use those hours to keep homes and towns warm. A carbon price on heating fuels, coming with ETS2, pushes the same way.</p>
           <p class="op-me">I’ve worked on energy from both ends: the technology and the policy.</p>
           <p class="op-when" data-date="2028-01-01"><span class="op-date">1 Jan 2028</span> ETS2: carbon price on fuels for buildings and road transport · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a> <span class="status"></span></p>
         </li>
@@ -348,8 +345,12 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
     <div class="wrap">
       <p class="kicker">Contact</p>
       <h2 id="h-contact-en">Write to me with a real question</h2>
-      <p class="example">“We’re rolling out an agent that acts on behalf of our customers. Who is liable if it gets something wrong, and what do we need to log before 9 December?”</p>
-      <p class="lead">A question like that mixes law, a deadline and a technical fix, and usually nobody in the building reads all three. I can bring them together and tell you what needs doing now and what can wait. Open to a long-term role or a specific project.</p>
+      <ul class="questions">
+        <li><p class="example">“We want to move our heating to electricity and heat storage. What do the coming rules mean for our timing and options?”</p></li>
+        <li><p class="example">“We have an AI agent that works with our documents. How do we make its answers checkable by someone who didn’t build it?”</p></li>
+        <li><p class="example">“We’re rolling out an agent that acts on behalf of our customers. Who is liable if it gets something wrong, and what do we need to log to show it?”</p></li>
+      </ul>
+      <p class="lead">Questions like these mix rules, timing and a technical fix, and usually nobody in the building reads all of them. I can bring them together and tell you what needs doing now and what can wait. Open to a long-term role or a specific project.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Write to me</a>
@@ -389,7 +390,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <p class="domains"><span>Kliima</span><span class="sep">·</span><span>Energia</span><span class="sep">·</span><span>Digi</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">Muutus avab uksi.<br><em>Mina ehitan selle, mis neist läbi viib.</em></p>
       <p class="tagline-sub">Tehnoloogia on valmis. Enamik organisatsioone ei&nbsp;ole.</p>
-      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s võimalikuks muutub ja kuidas sinna jõuda, reeglid kaasa arvatud. Ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
+      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s võimalikuks muutub, ning teen sellest plaani, kus on vastutajad, tähtajad ja allikad, või tööriista, mille vastused jäävad algallikaga seotuks.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-et">Kirjuta mulle</a>
         <a class="btn btn-ghost" href="#radar-et">Vaata, mis on võimalik</a>
@@ -430,11 +431,11 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
         <article class="project">
           <h3><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
           <p>Kirjelda AI-süsteemi ja tööriist ütleb, mida AI Act sellele tähendab. Kuupäevad tulevad õigusakti järgivast koodist, mitte mudeli mälust.</p>
-          <p class="meta">Töötab · ligipääs kutse alusel</p>
+          <p class="meta">Töötab · ligipääs kutse alusel · esimene laadimine võib võtta kuni minuti</p>
         </article>
         <article class="project">
           <h3><a href="https://rkcd.github.io/agentide-vastutus/">Agentide vastutuse kaart Eestis</a></h3>
-          <p>Seitse olukorda, kus AI-agent eksib: millised reeglid kehtivad, kes vastutab ja kuhu teatada. Iga väite juures on link allikale.</p>
+          <p>Seitse olukorda, kus AI-agent eksib: millised reeglid kehtivad, kes vastutab ja kuhu teatada. Väidete juures on allikalingid.</p>
           <p class="meta">Versioon 0.3 · ei ole õigusnõu</p>
         </article>
       </div>
@@ -449,7 +450,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <ul class="openings">
         <li class="opening">
           <h3>Soojus odavast puhtast elektrist</h3>
-          <p>Kui tuul ja päike toodavad rohkem, kui parasjagu vaja, läheb elekter odavaks. Soojuspumbad, elektrikatlad ja soojussalvestid saavad neid tunde kasutada, et kodud ja linnad oleksid soojad.</p>
+          <p>Kui tuul ja päike toodavad rohkem, kui parasjagu vaja, läheb elekter odavaks. Soojuspumbad, elektrikatlad ja soojussalvestid saavad neid tunde kasutada, et kodud ja linnad oleksid soojad. Kütuste süsinikuhind, mis tuleb ETS2-ga, lükkab samas suunas.</p>
           <p class="op-me">Olen energiaga tegelenud mõlemast otsast: tehnika ja poliitika poolelt.</p>
           <p class="op-when" data-date="2028-01-01"><span class="op-date">1. jaan 2028</span> ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a> <span class="status"></span></p>
         </li>
@@ -479,8 +480,12 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
     <div class="wrap">
       <p class="kicker">Kontakt</p>
       <h2 id="h-contact-et">Kirjuta mulle päris küsimusega</h2>
-      <p class="example">„Juurutame agendi, mis teeb klientide eest toiminguid. Kes vastutab, kui see eksib, ja mida peame enne 9. detsembrit logima?“</p>
-      <p class="lead">Sellises küsimuses on koos õigus, tähtaeg ja tehniline lahendus, ja tavaliselt ei loe majas keegi kõiki kolme. Mina oskan need kokku viia ja öelda, mis tuleb teha kohe ja mis võib oodata. Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile.</p>
+      <ul class="questions">
+        <li><p class="example">„Tahame kütte elektrile ja soojussalvestile üle viia. Mida tulevased reeglid meie ajakavale ja valikutele tähendavad?“</p></li>
+        <li><p class="example">„Meil on AI-agent, mis töötab meie dokumentidega. Kuidas teha nii, et selle vastuseid saab kontrollida ka keegi, kes seda ei ehitanud?“</p></li>
+        <li><p class="example">„Juurutame agendi, mis teeb klientide eest toiminguid. Kes vastutab, kui see eksib, ja mida peame logima, et seda tõendada?“</p></li>
+      </ul>
+      <p class="lead">Sellistes küsimustes on koos reeglid, ajastus ja tehniline lahendus ning tavaliselt ei loe majas keegi kõiki. Mina oskan need kokku viia ja öelda, mis tuleb teha kohe ja mis võib oodata. Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Kirjuta mulle</a>
@@ -575,15 +580,30 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   });
 
   /* ---------- Language toggle ---------- */
+  function setLang(target, initial) {
+    document.querySelectorAll(".page[data-lang]").forEach(function (p) { p.hidden = p.getAttribute("data-lang") !== target; });
+    document.documentElement.lang = target;
+    // keep the address bar shareable: ?lang=et for Estonian, clean URL for English
+    try {
+      var u = new URL(location.href);
+      if (target === "et") u.searchParams.set("lang", "et"); else u.searchParams.delete("lang");
+      history.replaceState(null, "", u.pathname + u.search + (initial ? u.hash : ""));
+    } catch (e) {}
+  }
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var target = btn.getAttribute("data-set");
-      document.querySelectorAll(".page[data-lang]").forEach(function (p) { p.hidden = p.getAttribute("data-lang") !== target; });
-      document.documentElement.lang = target;
+      setLang(btn.getAttribute("data-set"));
       window.scrollTo(0, 0);
       var b = visible().querySelector(".lang-btn"); if (b) b.focus();
     });
   });
+  // a link can ask for Estonian: ?lang=et, or an anchor that ends in -et (#contact-et)
+  var wantsEt = /[?&]lang=et\b/.test(location.search) || /-et$/.test(location.hash);
+  if (wantsEt) {
+    setLang("et", true);
+    var anchor = location.hash && document.getElementById(location.hash.slice(1));
+    if (anchor) anchor.scrollIntoView({ behavior: "instant" });
+  }
 })();
 </script>
 </body>
