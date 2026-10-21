@@ -6,7 +6,7 @@
 <title>Robert Kond</title>
 <meta name="description" content="Robert Kond, former climate and renewable energy specialist at an Estonian ministry. EU climate, energy and AI rules, and tools that keep the answers tied to the source.">
 <meta property="og:title" content="Robert Kond">
-<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see which EU rules are coming and build tools that keep the answers tied to the source.">
+<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see what is opening up in climate, energy and AI and build tools that keep the answers tied to the source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rkcd.github.io/robertkond.github.io/">
 <meta property="og:image" content="https://rkcd.github.io/robertkond.github.io/og-image.jpg">
@@ -257,6 +257,17 @@ h2 {
 /* ---- V4: person first, calmer ---- */
 .stars-static { opacity: .3; }
 section[id] { scroll-margin-top: 64px; }
+.hero { position: relative; isolation: isolate; }
+.hero::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 22rem; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(10,15,28,.2) 0%, rgba(10,15,28,.5) 60%, rgba(10,15,28,.7) 100%),
+    url("hero-bg.jpg") 22% 45% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 40%, transparent 100%);
+}
+.rl-opens { font-size: .9rem; color: var(--ivory); margin-top: .35rem; }
+.rl-opens b { font-family: var(--mono); font-size: .68rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-right: .4rem; }
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(10,15,28,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .site-head .wrap { padding-top: .7rem; padding-bottom: .7rem; }
 .site-name { display: inline-flex; align-items: center; gap: .6rem; }
@@ -307,10 +318,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <h1 id="h1-en" class="name">Robert Kond</h1>
       <p class="domains"><span>Climate</span><span class="sep">·</span><span>Energy</span><span class="sep">·</span><span>Digital</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">The technology is ready. Most organizations aren’t. <em>I work in that gap.</em></p>
-      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see which EU rules are coming and what they mean in practice, and I build tools that keep the answers tied to the source.</p>
+      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is opening up in climate, energy and AI, what EU rules mean for it in practice, and I build tools that keep the answers tied to the source.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-en">Write to me</a>
-        <a class="btn btn-ghost" href="#radar-en">See what’s coming</a>
+        <a class="btn btn-ghost" href="#radar-en">See what it opens up</a>
       </div>
     </div>
   </section>
@@ -362,7 +373,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <section class="block" id="radar-en" aria-labelledby="h-radar-en">
     <div class="wrap">
       <p class="kicker">On my radar</p>
-      <h2 id="h-radar-en">What’s coming, and when</h2>
+      <h2 id="h-radar-en">What’s changing, and what it opens up</h2>
       <div class="radar">
         <div class="track" aria-hidden="true">
           <div class="lanes">
@@ -406,22 +417,22 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
         <ol class="radar-list">
           <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
             <span class="rl-n">1</span><span class="rl-date">29 May 2026</span>
-            <div class="rl-body"><div class="rl-title">EPBD: deadline to bring the recast buildings directive into national law</div><div class="rl-sub">In July 2026 the Commission sent formal notices to all 27 Member States for incomplete transposition.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">Directive (EU) 2024/1275</a>, Art 35</div></div>
+            <div class="rl-body"><div class="rl-title">EPBD: deadline to bring the recast buildings directive into national law</div><div class="rl-sub">In July 2026 the Commission sent formal notices to all 27 Member States for incomplete transposition.</div><div class="rl-opens"><b>Opens up</b>Room for renovation and building-data services once national rules are fixed.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">Directive (EU) 2024/1275</a>, Art 35</div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-02-01" data-n="2" data-domain="climate">
             <span class="rl-n">2</span><span class="rl-date">1 Feb 2027</span>
-            <div class="rl-body"><div class="rl-title">CBAM: certificate sales start</div><div class="rl-sub">Authorised importers start buying certificates for goods imported in 2026.</div><div class="rl-moved">Was <s>1 Jan 2026</s>, moved 13 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">Reg (EU) 2025/2083</a></div></div>
+            <div class="rl-body"><div class="rl-title">CBAM: certificate sales start</div><div class="rl-sub">Authorised importers start buying certificates for goods imported in 2026.</div><div class="rl-moved">Was <s>1 Jan 2026</s>, moved 13 months</div><div class="rl-opens"><b>Opens up</b>Demand for reliable, product-level emissions data and its verification.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">Reg (EU) 2025/2083</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2 Dec 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
+            <div class="rl-body"><div class="rl-title">AI Act: high-risk systems (Annex III)</div><div class="rl-sub">Hiring, credit scoring, education, biometrics.</div><div class="rl-moved">Was <s>2 Aug 2026</s>, moved 16 months</div><div class="rl-opens"><b>Opens up</b>More time to build high-risk AI with logging and evidence in from the start.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2028-01-01" data-n="4" data-domain="climate">
             <span class="rl-n">4</span><span class="rl-date">1 Jan 2028</span>
-            <div class="rl-body"><div class="rl-title">ETS2: carbon price on fuels for buildings and road transport</div><div class="rl-sub">Allowance auctions still start in 2027.</div><div class="rl-moved">Was <s>1 Jan 2027</s>, moved 12 months</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a></div></div>
+            <div class="rl-body"><div class="rl-title">ETS2: carbon price on fuels for buildings and road transport</div><div class="rl-sub">Allowance auctions still start in 2027.</div><div class="rl-moved">Was <s>1 Jan 2027</s>, moved 12 months</div><div class="rl-opens"><b>Opens up</b>One more year to prepare clean heating and transport before the price starts.</div><div class="rl-src">Source: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a></div></div>
             <span class="status"></span>
           </li>
         </ol>
@@ -475,10 +486,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <h1 id="h1-et" class="name">Robert Kond</h1>
       <p class="domains"><span>Kliima</span><span class="sep">·</span><span>Energia</span><span class="sep">·</span><span>Digi</span><span class="sep">·</span><span>AI</span></p>
       <p class="tagline">Tehnoloogia on valmis. Enamik organisatsioone ei ole. <em>Mina töötan selles vahes.</em></p>
-      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, millised EL-i reeglid on tulemas ja mida need päriselt tähendavad, ning ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
+      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s avaneb ja mida EL-i reeglid selle jaoks päriselt tähendavad, ning ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-et">Kirjuta mulle</a>
-        <a class="btn btn-ghost" href="#radar-et">Vaata, mis tuleb</a>
+        <a class="btn btn-ghost" href="#radar-et">Vaata, mida see avab</a>
       </div>
     </div>
   </section>
@@ -530,7 +541,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <section class="block" id="radar-et" aria-labelledby="h-radar-et">
     <div class="wrap">
       <p class="kicker">Minu radaril</p>
-      <h2 id="h-radar-et">Mis tuleb ja millal</h2>
+      <h2 id="h-radar-et">Mis muutub ja mida see avab</h2>
       <div class="radar">
         <div class="track" aria-hidden="true">
           <div class="lanes">
@@ -574,22 +585,22 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
         <ol class="radar-list">
           <li class="is-past" data-date="2026-05-29" data-n="1" data-domain="climate" data-kind="deadline">
             <span class="rl-n">1</span><span class="rl-date">29. mai 2026</span>
-            <div class="rl-body"><div class="rl-title">EPBD: uuendatud hoonete direktiivi ülevõtmise tähtaeg</div><div class="rl-sub">Juulis 2026 saatis komisjon kõigile 27 liikmesriigile märgukirja puuduliku ülevõtmise pärast.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">direktiiv (EL) 2024/1275</a>, art 35</div></div>
+            <div class="rl-body"><div class="rl-title">EPBD: uuendatud hoonete direktiivi ülevõtmise tähtaeg</div><div class="rl-sub">Juulis 2026 saatis komisjon kõigile 27 liikmesriigile märgukirja puuduliku ülevõtmise pärast.</div><div class="rl-opens"><b>Avab</b>Ruumi renoveerimise ja hoone andmete teenustele, kui riiklikud reeglid on paigas.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/dir/2024/1275/oj">direktiiv (EL) 2024/1275</a>, art 35</div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-02-01" data-n="2" data-domain="climate">
             <span class="rl-n">2</span><span class="rl-date">1. veebr 2027</span>
-            <div class="rl-body"><div class="rl-title">CBAM: sertifikaatide müük algab</div><div class="rl-sub">Volitatud importijad hakkavad ostma sertifikaate 2026. aastal imporditud kaupade eest.</div><div class="rl-moved">Oli <s>1. jaan 2026</s>, nihkus 13 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">määrus (EL) 2025/2083</a></div></div>
+            <div class="rl-body"><div class="rl-title">CBAM: sertifikaatide müük algab</div><div class="rl-sub">Volitatud importijad hakkavad ostma sertifikaate 2026. aastal imporditud kaupade eest.</div><div class="rl-moved">Oli <s>1. jaan 2026</s>, nihkus 13 kuud</div><div class="rl-opens"><b>Avab</b>Nõudlus usaldusväärsetele toote tasemel heiteandmetele ja nende kontrollile.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2025/2083/oj">määrus (EL) 2025/2083</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2027-12-02" data-n="3">
             <span class="rl-n">3</span><span class="rl-date">2. dets 2027</span>
-            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a></div></div>
+            <div class="rl-body"><div class="rl-title">AI Act: suure riskiga süsteemid (III lisa)</div><div class="rl-sub">Värbamine, krediidivõimelisuse hindamine, haridus, biomeetria.</div><div class="rl-moved">Oli <s>2. aug 2026</s>, nihkus 16 kuud</div><div class="rl-opens"><b>Avab</b>Rohkem aega ehitada suure riskiga AI nii, et logid ja tõendid on algusest peale sees.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a></div></div>
             <span class="status"></span>
           </li>
           <li data-date="2028-01-01" data-n="4" data-domain="climate">
             <span class="rl-n">4</span><span class="rl-date">1. jaan 2028</span>
-            <div class="rl-body"><div class="rl-title">ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind</div><div class="rl-sub">Lubatud heitkoguse ühikute enampakkumised algavad siiski 2027.</div><div class="rl-moved">Oli <s>1. jaan 2027</s>, nihkus 12 kuud</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a></div></div>
+            <div class="rl-body"><div class="rl-title">ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind</div><div class="rl-sub">Lubatud heitkoguse ühikute enampakkumised algavad siiski 2027.</div><div class="rl-moved">Oli <s>1. jaan 2027</s>, nihkus 12 kuud</div><div class="rl-opens"><b>Avab</b>Üks aasta lisa valmistuda puhta kütte ja transpordi üleminekuks enne hinna algust.</div><div class="rl-src">Allikas: <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a></div></div>
             <span class="status"></span>
           </li>
         </ol>
