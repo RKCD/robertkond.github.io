@@ -4,11 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Robert Kond</title>
-<meta name="description" content="The technology is ready. Most organizations aren't. Robert Kond maps EU climate, energy and AI regulation, sees what is coming and when, and builds the tools that do the work.">
-<meta property="og:title" content="Robert Kond: I work in the gap">
-<meta property="og:description" content="The technology is ready. Most organizations aren't. EU regulation, climate, energy and AI: mapped, dated and built into working tools.">
+<meta name="description" content="Robert Kond, former climate and renewable energy specialist at an Estonian ministry. EU climate, energy and AI rules, and tools that keep the answers tied to the source.">
+<meta property="og:title" content="Robert Kond">
+<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see which EU rules are coming and build tools that keep the answers tied to the source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rkcd.github.io/robertkond.github.io/">
+<meta property="og:image" content="https://rkcd.github.io/robertkond.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Robert Kond">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0F1C">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +66,6 @@ a:hover { color: var(--gold-hi); }
     radial-gradient(1px 1px at 241px 19px, rgba(236,231,219,.3) 50%, transparent 52%);
   background-size: 420px 380px;
 }
-#sky { position: absolute; top: 0; left: 0; width: 100%; height: 0; z-index: 0; pointer-events: none; display: block; }
 
 .page { position: relative; z-index: 1; }
 .wrap { max-width: 46rem; margin: 0 auto; padding-inline: max(16px, 1.35rem); }
@@ -146,7 +149,7 @@ h2 {
 .radar { background: rgba(16,24,40,.72); border: 1px solid var(--line); border-radius: 14px; padding: 1.6rem clamp(1rem, 4vw, 1.8rem) 1.2rem; margin-top: 1.4rem; }
 .track { margin-top: .6rem; }
 .lane { position: relative; height: 5rem; }
-.past { position: absolute; left: 2%; top: 0; bottom: 0; width: 25.14%; background: rgba(236,231,219,.045); border-radius: 4px 0 0 4px; }
+.past-zone { position: absolute; left: 2%; top: 0; bottom: 0; width: 25.14%; background: rgba(236,231,219,.045); border-radius: 4px 0 0 4px; }
 .axis { position: absolute; left: 2%; right: 2%; bottom: 0; height: 1px; background: #3A4660; }
 .arcs { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .arcs path { fill: none; stroke: var(--teal); stroke-width: 1.4; stroke-dasharray: 5 4; opacity: .85; }
@@ -250,18 +253,46 @@ h2 {
 .js .hero .wrap > *:nth-child(6) { animation-delay: .4s; }
 .js .hero .wrap > *:nth-child(7) { animation-delay: .48s; }
 @media (prefers-reduced-motion: reduce) { .js .hero .wrap > * { animation: none; } }
+
+/* ---- V4: person first, calmer ---- */
+.stars-static { opacity: .3; }
+section[id] { scroll-margin-top: 64px; }
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(10,15,28,.86); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.site-head .wrap { padding-top: .7rem; padding-bottom: .7rem; }
+.site-name { display: inline-flex; align-items: center; gap: .6rem; }
+.head-avatar { width: 1.9rem; height: 1.9rem; border-radius: 50%; object-fit: cover; border: 1px solid rgba(230,194,125,.45); }
+.hero { padding-block: 3rem 3.4rem; }
+h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: none; }
+.hero .domains { margin-top: .7rem; }
+.tagline { margin-top: 1.4rem; font-family: var(--display); font-weight: 500; font-size: clamp(1.15rem, 3vw, 1.45rem); line-height: 1.35; color: var(--ivory); max-width: 30ch; text-wrap: balance; }
+.tagline em { font-style: italic; color: var(--gold); }
+.prose p { color: var(--muted); max-width: 62ch; font-size: 1.03rem; }
+.prose p + p { margin-top: 1rem; }
+.exp { list-style: none; padding: 0; margin: 1.2rem 0 0; border-top: 1px solid var(--line); }
+.exp li { display: grid; grid-template-columns: minmax(0, 16rem) minmax(0, 1fr); gap: .2rem 1.4rem; padding-block: .85rem; border-bottom: 1px solid var(--line); }
+.exp .role { display: block; font-weight: 600; color: var(--ivory); font-size: .98rem; }
+.exp .org { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .03em; color: var(--gold); margin-top: .15rem; }
+.exp .what { margin: 0; color: var(--muted); font-size: .95rem; }
+@media (max-width: 40rem) { .exp li { grid-template-columns: 1fr; } }
+.edu { margin-top: 1.2rem; color: var(--muted); font-size: .92rem; max-width: 62ch; }
+.projects { display: grid; gap: 1rem; margin-top: 1.2rem; }
+.project { border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; background: rgba(16,24,40,.6); }
+.project h3 { font-family: var(--display); font-weight: 600; font-size: 1.12rem; }
+.project h3 a { color: var(--ivory); text-decoration-color: var(--gold); }
+.project p { margin-top: .35rem; color: var(--muted); font-size: .95rem; }
+.project .meta { margin-top: .55rem; font-family: var(--mono); font-size: .68rem; letter-spacing: .03em; }
+.example { margin: 1.2rem auto 0; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.45; color: var(--ivory); max-width: 46ch; }
 </style>
 </head>
 <body>
 <div class="stars-static" aria-hidden="true"></div>
-<canvas id="sky" aria-hidden="true"></canvas>
 
 <!-- ================= ENGLISH (default) ================= -->
 <div class="page" data-lang="en" lang="en">
 <a class="skip-link" href="#main-en">Skip to content</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="site-name" href="#main-en">Robert Kond</a>
+    <a class="site-name" href="#main-en"><img class="head-avatar" src="robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
     <span class="head-right">
       <button class="lang-btn" type="button" data-set="et" aria-label="Vaheta eesti keelde">ET</button>
       <a class="head-link" href="#contact-en">Contact</a>
@@ -273,12 +304,57 @@ h2 {
   <section class="hero" aria-labelledby="h1-en">
     <div class="wrap">
       <img class="portrait" src="robert-avatar.jpg" alt="Robert Kond" width="112" height="112">
+      <h1 id="h1-en" class="name">Robert Kond</h1>
       <p class="domains"><span>Climate</span><span class="sep">·</span><span>Energy</span><span class="sep">·</span><span>Digital</span><span class="sep">·</span><span>AI</span></p>
-      <h1 id="h1-en">The technology is ready. Most organizations aren’t. <em>I work in that gap.</em></h1>
-      <p class="lead">I help organizations understand what changing regulation and technology mean for them, decide what to do, and turn it into a working workflow or AI tool. I don’t stop at analysis — I build solutions that can be tested, checked and kept running.</p>
+      <p class="tagline">The technology is ready. Most organizations aren’t. <em>I work in that gap.</em></p>
+      <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see which EU rules are coming and what they mean in practice, and I build tools that keep the answers tied to the source.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#contact-en">Send me a problem</a>
+        <a class="btn btn-gold" href="#contact-en">Write to me</a>
         <a class="btn btn-ghost" href="#radar-en">See what’s coming</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-about-en">
+    <div class="wrap prose">
+      <p class="kicker">About</p>
+      <h2 id="h-about-en">From ministry rules to working tools</h2>
+      <p>I worked as a climate and renewable energy specialist at Estonia’s Ministry of Regional Affairs and Agriculture. My work covered the Climate Act, the national energy and climate plan (REKK 2030, the NECP), biomethane rules and EU working groups. What I took with me is a feel for what comes next and when, especially how Estonia writes an EU rule into its own law and what changes along the way. I also learned that an obligation always reaches a company later, and messier, than it was written in Brussels.</p>
+      <p>I started building AI tools when I saw models answer regulatory questions with confidence and get them wrong. I asked three models about the AI Act deadlines, and all three gave me the same wrong answer. I wanted to see whether I could build something whose answer stays tied to the original source. That is how the AI Act Readiness Check and the agent liability map came about.</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-exp-en">
+    <div class="wrap">
+      <p class="kicker">Experience</p>
+      <h2 id="h-exp-en">Where I come from</h2>
+      <ul class="exp">
+        <li><div><span class="role">Climate and renewable energy specialist</span><span class="org">Ministry of Regional Affairs and Agriculture, Estonia</span></div><p class="what">Climate and energy policy, and bringing EU directives into Estonian law.</p></li>
+        <li><div><span class="role">Software tester</span><span class="org">RocketLab</span></div><p class="what">Test cases and bug reports.</p></li>
+        <li><div><span class="role">Network solutions project manager</span><span class="org">Oixio</span></div><p class="what">Designing and rolling out IT networks for clients.</p></li>
+        <li><div><span class="role">Digital services project manager and sales</span><span class="org">Agricon GmbH</span></div><p class="what">Precision farming solutions for the Estonian market.</p></li>
+        <li><div><span class="role">Logistics specialist</span><span class="org">Geodis and DSV, Germany</span></div><p class="what">International shipments and their paperwork.</p></li>
+        <li><div><span class="role">Maintenance technician</span><span class="org">Katlamajade Hooldus OÜ</span></div><p class="what">Boiler houses, heat substations and heat meters.</p></li>
+      </ul>
+      <p class="edu">Estonian University of Life Sciences: MSc in agricultural production and marketing, BSc in environmental protection. Mainor: studies in software development and entrepreneurship. Microsoft Azure AZ-104. Estonian, English, German.</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-proj-en">
+    <div class="wrap">
+      <p class="kicker">What I’m building</p>
+      <h2 id="h-proj-en">Two tools that keep the answer tied to the source</h2>
+      <div class="projects">
+        <article class="project">
+          <h3><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
+          <p>Describe an AI system and it tells you what the AI Act means for it. The dates come from code that follows the legal text, not from the model’s memory.</p>
+          <p class="meta">Live · access by invitation</p>
+        </article>
+        <article class="project">
+          <h3><a href="https://rkcd.github.io/agentide-vastutus/">Agent liability map for Estonia</a></h3>
+          <p>Seven situations where an AI agent gets something wrong: which rules apply, who is liable and where to report it. Every claim links to its source.</p>
+          <p class="meta">In Estonian · version 0.3 · not legal advice</p>
+        </article>
       </div>
     </div>
   </section>
@@ -290,7 +366,7 @@ h2 {
       <div class="radar">
         <div class="track" aria-hidden="true">
           <div class="lanes">
-            <div class="past"></div>
+            <div class="past-zone"></div>
             <div class="lane">
               <span class="lane-label">AI</span>
               <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -355,40 +431,12 @@ h2 {
     </div>
   </section>
 
-  <section class="pull" aria-label="Core claim">
-    <div class="wrap">
-      <p class="pullquote">A policy analyst doesn’t read code. An engineer doesn’t read Annex III.</p>
-      <p class="pull-answer">I read both.</p>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="h-how-en">
-    <div class="wrap">
-      <p class="kicker">How I work</p>
-      <h2 id="h-how-en">Notice → map → translate → build → keep it running.</h2>
-      <div class="case">
-        <h3 class="case-title">One case: <a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
-        <p class="case-src">From the tool’s evaluation set.</p>
-        <dl class="case-rows">
-          <div><dt>Input</dt><dd>“We screen incoming CVs automatically, ranking candidates by suitability score before a recruiter reviews them.” An HR startup, as the provider.</dd></div>
-          <div><dt>The model</dt><dd>Picks from a fixed list: role provider, risk class high-risk (Annex III, Art 6(2)).</dd></div>
-          <div><dt>The code</dt><dd>Looks up the date and legal basis in the corpus: 2 December 2027, Article 113 as amended by Regulation (EU) 2026/1744.</dd></div>
-          <div><dt>A person</dt><dd>Checks the tool’s confidence and information gaps. A lawyer makes the final call.</dd></div>
-          <div><dt>Status</dt><dd>Launched August 2026, access by invitation. Outcome not yet measured.</dd></div>
-        </dl>
-        <p class="principle">Anything that must be right lives in code or rules. The model handles language.</p>
-      </div>
-      <p class="note">Background: boiler-house and heat-meter maintenance in the field, then climate and renewable energy policy at Estonia’s Ministry of Regional Affairs and Agriculture: Climate Act, REKK 2030, NECP, biomethane regulation, EU working groups.</p>
-      <p class="note">Tools: Claude, MCP, Microsoft Azure (AZ-104). Estonian University of Life Sciences: BSc in environmental protection, MSc in agricultural production and marketing. Earlier: agritech sales in precision farming. Estonian, English, German.<!-- TODO-ROBERT: "Python" on tööriistade realt eemaldatud, sest CV-s seda pole. Lisa tagasi ainult siis, kui see on sinu oskus. --></p>
-    </div>
-  </section>
-
   <section class="block contact" id="contact-en" aria-labelledby="h-contact-en">
     <div class="wrap">
       <p class="kicker">Contact</p>
-      <h2 id="h-contact-en">Bring me an in-between problem</h2>
-      <p class="lead">Regulation is changing, the data exists, but the organization doesn’t know what to do next — or does it all by hand. I map the requirements, find the changes that matter and build the workflow or AI tool that turns information into action.</p>
-      <p class="lead lead-2">Open to a long-term role or a specific project. In two or three sentences: what is changing, who has to act, and where the current process gets stuck.</p>
+      <h2 id="h-contact-en">Write to me with a real question</h2>
+      <p class="example">“We’re rolling out an agent that acts on behalf of our customers. Who is liable if it gets something wrong, and what do we need to log before 9 December?”</p>
+      <p class="lead">A question like that mixes law, a deadline and a technical fix, and usually nobody in the building reads all three. I can bring them together and tell you what needs doing now and what can wait. Open to a long-term role or a specific project.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Write to me</a>
@@ -402,7 +450,7 @@ h2 {
 <footer class="site-foot">
   <div class="wrap">
     <p>Informational only. Nothing on this page is legal advice.</p>
-    <p>Last updated: 16 October 2026 · Robert Kond · Estonia</p>
+    <p>Last updated: 21 October 2026 · Robert Kond · Estonia</p>
   </div>
 </footer>
 </div>
@@ -412,7 +460,7 @@ h2 {
 <a class="skip-link" href="#main-et">Hüppa sisu juurde</a>
 <header class="site-head">
   <div class="wrap">
-    <a class="site-name" href="#main-et">Robert Kond</a>
+    <a class="site-name" href="#main-et"><img class="head-avatar" src="robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
     <span class="head-right">
       <button class="lang-btn" type="button" data-set="en" aria-label="Switch to English">EN</button>
       <a class="head-link" href="#contact-et">Kontakt</a>
@@ -424,12 +472,57 @@ h2 {
   <section class="hero" aria-labelledby="h1-et">
     <div class="wrap">
       <img class="portrait" src="robert-avatar.jpg" alt="Robert Kond" width="112" height="112">
+      <h1 id="h1-et" class="name">Robert Kond</h1>
       <p class="domains"><span>Kliima</span><span class="sep">·</span><span>Energia</span><span class="sep">·</span><span>Digi</span><span class="sep">·</span><span>AI</span></p>
-      <h1 id="h1-et">Tehnoloogia on valmis. Enamik organisatsioone ei ole. <em>Mina töötan selles vahes.</em></h1>
-      <p class="lead">Aitan organisatsioonidel mõista, mida muutuvad regulatsioonid ja tehnoloogiad nende jaoks tähendavad, otsustada, mida teha, ning muuta see toimivaks töövooguks või AI-tööriistaks. Ma ei piirdu analüüsiga — ehitan lahendusi, mida saab testida, kontrollida ja töös hoida.</p>
+      <p class="tagline">Tehnoloogia on valmis. Enamik organisatsioone ei ole. <em>Mina töötan selles vahes.</em></p>
+      <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, millised EL-i reeglid on tulemas ja mida need päriselt tähendavad, ning ehitan tööriistu, mis hoiavad vastused algallikaga seotud.</p>
       <div class="cta-row">
-        <a class="btn btn-gold" href="#contact-et">Saada mulle probleem</a>
+        <a class="btn btn-gold" href="#contact-et">Kirjuta mulle</a>
         <a class="btn btn-ghost" href="#radar-et">Vaata, mis tuleb</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-about-et">
+    <div class="wrap prose">
+      <p class="kicker">Minust</p>
+      <h2 id="h-about-et">Ministeeriumi reeglitest töötavate tööriistadeni</h2>
+      <p>Töötasin Regionaal- ja Põllumajandusministeeriumis kliima- ja taastuvenergia spetsialistina. Tegelesin kliimaseaduse, REKK 2030, NECP-i ja biometaani regulatsiooniga ning osalesin EL-i töögruppides. Sealt võtsin kaasa oskuse näha, mis järgmisena tuleb ja millal. Eriti seda, kuidas Eesti EL-i reegli oma õigusesse üle võtab ja mis selle käigus muutub. Sain ka aru, et kohustus jõuab ettevõtteni alati hiljem ja segasemalt, kui see Brüsselis kirja pannakse.</p>
+      <p>AI-tööriistu hakkasin ehitama, kui nägin, et mudelid vastavad regulatsiooni kohta enesekindlalt ja valesti. Küsisin kolmelt mudelilt AI Acti tähtaegade kohta ja kõik kolm andsid sama vale vastuse. Tahtsin näha, kas suudan ehitada midagi, mille vastus jääb algallikaga seotuks. Nii sündisid AI Act Readiness Check ja agentide vastutuse kaart.</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-exp-et">
+    <div class="wrap">
+      <p class="kicker">Kogemus</p>
+      <h2 id="h-exp-et">Kust ma tulen</h2>
+      <ul class="exp">
+        <li><div><span class="role">Kliima- ja taastuvenergia spetsialist</span><span class="org">Regionaal- ja Põllumajandusministeerium</span></div><p class="what">Kliima- ja energiapoliitika ning EL-i direktiivide ülevõtmine Eesti õigusesse.</p></li>
+        <li><div><span class="role">Tarkvara testija</span><span class="org">RocketLab</span></div><p class="what">Testjuhtumid ja vigade dokumenteerimine.</p></li>
+        <li><div><span class="role">Võrgulahenduste projektijuht</span><span class="org">Oixio</span></div><p class="what">Klientide IT-võrkude projekteerimine ja juurutamine.</p></li>
+        <li><div><span class="role">Digiteenuste projektijuht ja müük</span><span class="org">Agricon GmbH</span></div><p class="what">Täppispõllumajanduse lahendused Eesti turul.</p></li>
+        <li><div><span class="role">Logistik</span><span class="org">Geodis ja DSV, Saksamaa</span></div><p class="what">Rahvusvahelised veod ja nende dokumendid.</p></li>
+        <li><div><span class="role">Hooldustehnik</span><span class="org">Katlamajade Hooldus OÜ</span></div><p class="what">Katlamajad, soojussõlmed ja soojusarvestid.</p></li>
+      </ul>
+      <p class="edu">Eesti Maaülikool: põllumajandussaaduste tootmise ja turustamise magister, keskkonnakaitse bakalaureus. Mainor: tarkvaraarenduse ja ettevõtluse õpingud. Microsoft Azure AZ-104. Eesti, inglise ja saksa keel.</p>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-proj-et">
+    <div class="wrap">
+      <p class="kicker">Mida ehitan</p>
+      <h2 id="h-proj-et">Kaks tööriista, mille vastus on seotud allikaga</h2>
+      <div class="projects">
+        <article class="project">
+          <h3><a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
+          <p>Kirjelda AI-süsteemi ja tööriist ütleb, mida AI Act sellele tähendab. Kuupäevad tulevad õigusakti järgivast koodist, mitte mudeli mälust.</p>
+          <p class="meta">Töötab · ligipääs kutse alusel</p>
+        </article>
+        <article class="project">
+          <h3><a href="https://rkcd.github.io/agentide-vastutus/">Agentide vastutuse kaart Eestis</a></h3>
+          <p>Seitse olukorda, kus AI-agent eksib: millised reeglid kehtivad, kes vastutab ja kuhu teatada. Iga väite juures on link allikale.</p>
+          <p class="meta">Versioon 0.3 · ei ole õigusnõu</p>
+        </article>
       </div>
     </div>
   </section>
@@ -441,7 +534,7 @@ h2 {
       <div class="radar">
         <div class="track" aria-hidden="true">
           <div class="lanes">
-            <div class="past"></div>
+            <div class="past-zone"></div>
             <div class="lane">
               <span class="lane-label">AI</span>
               <svg class="arcs ai" viewBox="0 0 1000 100" preserveAspectRatio="none">
@@ -506,40 +599,12 @@ h2 {
     </div>
   </section>
 
-  <section class="pull" aria-label="Põhiväide">
-    <div class="wrap">
-      <p class="pullquote">Poliitikaanalüütik ei loe koodi. Insener ei loe III lisa.</p>
-      <p class="pull-answer">Mina loen mõlemat.</p>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="h-how-et">
-    <div class="wrap">
-      <p class="kicker">Kuidas ma töötan</p>
-      <h2 id="h-how-et">Märkan → kaardistan → tõlgin → ehitan → hoian töös.</h2>
-      <div class="case">
-        <h3 class="case-title">Üks juhtum: <a href="https://eu-ai-act-checker.onrender.com">EU AI Act Readiness Check</a></h3>
-        <p class="case-src">Tööriista hindamiskomplektist.</p>
-        <dl class="case-rows">
-          <div><dt>Sisend</dt><dd>„We screen incoming CVs automatically, ranking candidates by suitability score before a recruiter reviews them.” HR-idufirma, pakkuja rollis.</dd></div>
-          <div><dt>Mudel</dt><dd>Valib kindlast loetelust: roll pakkuja, riskiklass suure riskiga süsteem (III lisa, art 6 lg 2).</dd></div>
-          <div><dt>Kood</dt><dd>Leiab korpusest kuupäeva ja õigusliku aluse: 2. detsember 2027, artikkel 113, muudetud määrusega (EL) 2026/1744.</dd></div>
-          <div><dt>Inimene</dt><dd>Kontrollib tööriista kindlustaset ja infolünki. Lõpliku otsuse teeb jurist.</dd></div>
-          <div><dt>Staatus</dt><dd>Käivitatud augustis 2026, ligipääs kutse alusel. Tulemust pole veel mõõdetud.</dd></div>
-        </dl>
-        <p class="principle">Kõik, mis peab olema õige, on koodis või reeglites. Mudel tegeleb keelega.</p>
-      </div>
-      <p class="note">Taust: katlamajade ja soojusarvestite hooldus väljal, seejärel kliima- ja taastuvenergiapoliitika Regionaal- ja Põllumajandusministeeriumis: Kliimaseadus, REKK 2030, NECP, biometaani regulatsioon, EL-i töörühmad.</p>
-      <p class="note">Tööriistad: Claude, MCP, Microsoft Azure (AZ-104). Eesti Maaülikool: keskkonnakaitse bakalaureus ning põllumajandussaaduste tootmise ja turustamise magister. Varem: agritech-müük täppispõllumajanduses. Eesti, inglise ja saksa keel.</p>
-    </div>
-  </section>
-
   <section class="block contact" id="contact-et" aria-labelledby="h-contact-et">
     <div class="wrap">
       <p class="kicker">Kontakt</p>
-      <h2 id="h-contact-et">Too mulle vahepealne probleem</h2>
-      <p class="lead">Regulatsioon muutub, andmed on olemas, kuid organisatsioon ei tea, mida järgmisena teha — või teeb kõike käsitsi. Kaardistan nõuded, leian olulised muutused ja ehitan töövoo või AI-tööriista, mis muudab info tegevuseks.</p>
-      <p class="lead lead-2">Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile. Kirjelda paari lausega: mis muutub, kes peab tegutsema ja kus protsess takerdub.</p>
+      <h2 id="h-contact-et">Kirjuta mulle päris küsimusega</h2>
+      <p class="example">„Juurutame agendi, mis teeb klientide eest toiminguid. Kes vastutab, kui see eksib, ja mida peame enne 9. detsembrit logima?“</p>
+      <p class="lead">Sellises küsimuses on koos õigus, tähtaeg ja tehniline lahendus, ja tavaliselt ei loe majas keegi kõiki kolme. Mina oskan need kokku viia ja öelda, mis tuleb teha kohe ja mis võib oodata. Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile.</p>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Kirjuta mulle</a>
@@ -553,7 +618,7 @@ h2 {
 <footer class="site-foot">
   <div class="wrap">
     <p>Ainult informatiivne. Miski sellel lehel ei ole õigusnõustamine.</p>
-    <p>Viimati uuendatud: 16. oktoober 2026 · Robert Kond · Eesti</p>
+    <p>Viimati uuendatud: 21. oktoober 2026 · Robert Kond · Eesti</p>
   </div>
 </footer>
 </div>
@@ -577,7 +642,7 @@ h2 {
   document.querySelectorAll(".page[data-lang]").forEach(function (page) {
     var w = words[page.getAttribute("data-lang")];
     page.querySelectorAll(".today, .today-label").forEach(function (el) { el.style.left = tp + "%"; });
-    page.querySelectorAll(".past").forEach(function (el) { el.style.width = (tp - 2) + "%"; });
+    page.querySelectorAll(".past-zone").forEach(function (el) { el.style.width = (tp - 2) + "%"; });
     page.querySelectorAll(".radar-list li[data-date]").forEach(function (li) {
       var p = li.getAttribute("data-date").split("-");
       var days = Math.round((Date.UTC(+p[0], +p[1] - 1, +p[2]) - today) / 86400000);
@@ -639,161 +704,13 @@ h2 {
     });
   });
 
-  /* ---------- Night sky: topic stars drift toward the portrait ---------- */
-  var canvas = document.getElementById("sky");
-  var ctx = canvas.getContext && canvas.getContext("2d");
-  var LABELS = {
-    en: ["AI Act", "NECP 2030", "Biomethane", "EPBD", "Energy efficiency", "Net zero", "EU Taxonomy", "Smart grid", "Precision agriculture", "Circular economy", "Heat pumps", "RegTech", "Agent orchestration", "Renovation wave", "Carbon footprint", "Climate Act"],
-    et: ["AI Act", "REKK 2030", "Biometaan", "EPBD", "Energiatõhusus", "Kliimaneutraalsus", "EL taksonoomia", "Nutivõrk", "Täppispõllumajandus", "Ringmajandus", "Soojuspumbad", "RegTech", "Agentide orkestreerimine", "Renoveerimislaine", "Süsiniku jalajälg", "Kliimaseadus"]
-  };
-  var HUES = ["111,199,184", "143,211,160", "138,180,248", "229,154,168", "183,164,240", "230,194,125"];
-  var W = 0, H = 0, stars = [], nodes = [], waves = [], t = 0, raf = 0, lang = "en", quiet = null;
-
-  function rnd(a, b) { return a + Math.random() * (b - a); }
-  function focal() {
-    var img = visible().querySelector(".portrait");
-    var r = img.getBoundingClientRect();
-    return { x: r.left + r.width / 2 + window.scrollX, y: r.top + r.height / 2 + window.scrollY };
-  }
-  function size() {
-    var hero = visible().querySelector(".hero");
-    var r = hero.getBoundingClientRect();
-    var dpr = Math.min(2, window.devicePixelRatio || 1);
-    W = document.documentElement.clientWidth;
-    H = Math.round(r.bottom + window.scrollY);
-    canvas.style.height = H + "px";
-    canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    // Quiet zone: the hero text column, where topic stars nearly vanish so the words stay clean.
-    var q = hero.querySelector("h1").getBoundingClientRect();
-    var c = hero.querySelector(".cta-row").getBoundingClientRect();
-    var pad = 28;
-    quiet = { x1: Math.min(q.left, c.left) - pad, x2: Math.max(q.right, c.right) + pad, y1: q.top + window.scrollY - pad, y2: c.bottom + window.scrollY + pad };
-  }
-  function makeStars() {
-    stars = [];
-    var n = Math.max(50, Math.min(150, Math.round(W * H / 9500)));
-    for (var i = 0; i < n; i++) {
-      stars.push({ x: rnd(0, W), y: rnd(0, H), r: rnd(.3, 1.15), a: rnd(.15, .55), p: rnd(0, 6.28), s: rnd(.4, 1.2),
-        c: Math.random() < .18 ? HUES[(Math.random() * HUES.length) | 0] : "236,231,219" });
-    }
-    waves = [
-      { y: .58, amp: 22, len: 1.25, sp: .00016, c: "111,199,184", a: .10 },
-      { y: .72, amp: 30, len: .9, sp: -.00012, c: "230,194,125", a: .07 },
-      { y: .86, amp: 18, len: 1.6, sp: .0001, c: "183,164,240", a: .07 }
-    ];
-  }
-  function newNode(label, edge) {
-    var f = focal(), x, y, tries = 0;
-    if (edge) {
-      var e = (Math.random() * 4) | 0;
-      x = e === 0 ? -10 : e === 1 ? W + 10 : rnd(0, W);
-      y = e === 2 ? -10 : e === 3 ? H + 10 : rnd(0, H);
-    } else {
-      do { x = rnd(0, W); y = rnd(0, H); tries++; } while (Math.hypot(x - f.x, y - f.y) < 300 && tries < 40);
-    }
-    return { x: x, y: y, vx: rnd(-.12, .12), vy: rnd(-.12, .12), label: label, c: HUES[(Math.random() * HUES.length) | 0], life: edge ? 0 : rnd(.5, 1) };
-  }
-  function makeNodes() {
-    var pool = LABELS[lang].slice().sort(function () { return Math.random() - .5; });
-    var count = W < 640 ? 6 : W < 1000 ? 10 : 14;
-    nodes = [];
-    for (var i = 0; i < count; i++) nodes.push(newNode(pool[i % pool.length], false));
-  }
-  function nodeAlpha(n, f) {
-    var d = Math.hypot(n.x - f.x, n.y - f.y);
-    var near = Math.max(0, Math.min(1, (d - 150) / 260));
-    var a = Math.min(n.life, near);
-    if (quiet && n.x > quiet.x1 && n.x < quiet.x2 && n.y > quiet.y1 && n.y < quiet.y2) a *= .18;
-    return a;
-  }
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    var f = focal();
-    // waves
-    waves.forEach(function (w) {
-      ctx.beginPath();
-      for (var x = 0; x <= W; x += 16) {
-        var y = H * w.y + Math.sin(x / (W * w.len) * 6.283 + t * w.sp * 60) * w.amp + Math.sin(x / 210 + t * .004) * 4;
-        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = "rgba(" + w.c + "," + w.a + ")"; ctx.lineWidth = 1.1; ctx.stroke();
-      ctx.strokeStyle = "rgba(" + w.c + "," + (w.a * .25) + ")"; ctx.lineWidth = 7; ctx.stroke();
-    });
-    // stars
-    stars.forEach(function (s) {
-      var a = s.a * (.65 + .35 * Math.sin(s.p + t * .02 * s.s));
-      ctx.fillStyle = "rgba(" + s.c + "," + a.toFixed(3) + ")";
-      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.283); ctx.fill();
-    });
-    // links between topic stars
-    for (var i = 0; i < nodes.length; i++) {
-      for (var j = i + 1; j < nodes.length; j++) {
-        var a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 170) {
-          var la = .09 * (1 - d / 170) * Math.min(nodeAlpha(a, f), nodeAlpha(b, f));
-          ctx.strokeStyle = "rgba(236,231,219," + la.toFixed(3) + ")"; ctx.lineWidth = 1;
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-        }
-      }
-    }
-    // topic stars
-    ctx.font = "500 10.5px 'IBM Plex Mono', ui-monospace, monospace";
-    ctx.textBaseline = "middle";
-    nodes.forEach(function (n) {
-      var al = nodeAlpha(n, f);
-      if (al <= .01) return;
-      ctx.fillStyle = "rgba(" + n.c + "," + (.14 * al).toFixed(3) + ")";
-      ctx.beginPath(); ctx.arc(n.x, n.y, 6, 0, 6.283); ctx.fill();
-      ctx.fillStyle = "rgba(" + n.c + "," + (.9 * al).toFixed(3) + ")";
-      ctx.beginPath(); ctx.arc(n.x, n.y, 2.2, 0, 6.283); ctx.fill();
-      ctx.fillStyle = "rgba(" + n.c + "," + (.55 * al).toFixed(3) + ")";
-      ctx.fillText(n.label, n.x + 8, n.y);
-    });
-  }
-  function step() {
-    var f = focal();
-    nodes.forEach(function (n, i) {
-      var dx = f.x - n.x, dy = f.y - n.y, d = Math.hypot(dx, dy) || 1;
-      n.vx += (dx / d) * .0035 + (-dy / d) * .0012;
-      n.vy += (dy / d) * .0035 + (dx / d) * .0012;
-      n.vx *= .993; n.vy *= .993;
-      var sp = Math.hypot(n.vx, n.vy);
-      if (sp > .3) { n.vx *= .3 / sp; n.vy *= .3 / sp; }
-      n.x += n.vx; n.y += n.vy;
-      if (n.life < 1) n.life = Math.min(1, n.life + .006);
-      if (d < 140) nodes[i] = newNode(n.label, true);
-    });
-    t++;
-  }
-  function loop() { step(); draw(); raf = requestAnimationFrame(loop); }
-  function start() {
-    if (!ctx) return;
-    cancelAnimationFrame(raf);
-    size(); makeStars(); makeNodes();
-    if (reduce || document.hidden) { draw(); return; }
-    loop();
-  }
-  if (ctx) {
-    start();
-    var rt;
-    window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(start, 200); });
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) cancelAnimationFrame(raf);
-      else if (!reduce) { cancelAnimationFrame(raf); loop(); }
-    });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { size(); draw(); });
-  }
-
   /* ---------- Language toggle ---------- */
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var target = btn.getAttribute("data-set");
       document.querySelectorAll(".page[data-lang]").forEach(function (p) { p.hidden = p.getAttribute("data-lang") !== target; });
       document.documentElement.lang = target;
-      lang = target;
       window.scrollTo(0, 0);
-      start();
       var b = visible().querySelector(".lang-btn"); if (b) b.focus();
     });
   });
