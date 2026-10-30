@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Robert Kond</title>
-<meta name="description" content="Robert Kond, former climate and renewable energy specialist at an Estonian ministry. EU climate, energy and AI rules, and tools that keep the answers tied to the source.">
+<meta name="description" content="Robert Kond, former climate and renewable energy specialist at an Estonian ministry. I notice early what is changing in energy, AI and the rules around them, and build what goes through those openings.">
 <meta property="og:title" content="Robert Kond">
-<meta property="og:description" content="Former ministry climate and energy specialist. I help organizations see what is becoming possible in climate, energy and AI, and build tools that keep the answers tied to the source.">
+<meta property="og:description" content="Former ministry climate and energy specialist. I notice early what is changing in energy, AI and the rules around them, and build what goes through those openings.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rkcd.github.io/robertkond.github.io/">
 <meta property="og:image" content="https://rkcd.github.io/robertkond.github.io/og-image.jpg">
@@ -156,9 +156,9 @@ h2 {
 .status:empty { display: none; }
 
 /* ---- Freshness ---- */
-.freshness { margin-top: 1rem; font-family: var(--mono); font-size: .78rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+.freshness { margin-top: 1rem; font-family: var(--mono); font-size: .78rem; color: var(--muted); display: flex; align-items: flex-start; gap: .5rem; }
 .freshness:empty { display: none; }
-.freshness::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--teal); flex: none; }
+.freshness::before { content: ""; width: .45rem; height: .45rem; border-radius: 50%; background: var(--teal); flex: none; margin-top: .42em; }
 .freshness.overdue { color: var(--warn); }
 .freshness.overdue::before { background: var(--warn); }
 
@@ -225,10 +225,37 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
 .project h3 a { color: var(--ivory); text-decoration-color: var(--gold); display: inline-block; padding-block: .35rem; }
 .project p { margin-top: .35rem; color: var(--muted); font-size: .95rem; }
 .project .meta { margin-top: .55rem; font-family: var(--mono); font-size: .78rem; letter-spacing: .03em; }
-.questions { list-style: none; padding: 0; display: grid; gap: .9rem; margin-top: 1.2rem; }
-.questions .example { margin: 0; max-width: none; font-size: 1.08rem; }
-.questions li + li { border-top: 1px solid var(--line); padding-top: .9rem; }
-.example { margin: 1.2rem auto 0; font-family: var(--display); font-style: italic; font-weight: 500; font-size: 1.15rem; line-height: 1.45; color: var(--ivory); max-width: 46ch; }
+/* ---- Signals, theses, work with me ---- */
+.head-link.soft { color: var(--muted); }
+.head-link.soft:hover { color: var(--gold); }
+.sig-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 1.6rem; align-items: start; }
+.sig-grid .section-lead { margin-bottom: 1rem; }
+.sig-parts { list-style: none; padding: 0; display: grid; gap: .55rem; }
+.sig-parts li { color: var(--muted); }
+.sig-parts b, .why b { color: var(--ivory); font-weight: 600; }
+.receipt { font-family: var(--mono); font-size: .76rem; line-height: 1.85; background: #ECE7DB; color: #1B1F2A; border-radius: 6px; padding: 1.1rem 1.2rem; transform: rotate(-1.2deg); margin-top: .4rem; }
+.rc-h { letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px dashed #8A8678; padding-bottom: .4rem; margin-bottom: .4rem; }
+.rc-ok { color: #0F6E56; }
+.rc-f { border-top: 1px dashed #8A8678; margin-top: .4rem; padding-top: .4rem; font-size: .74rem; color: #5F5E5A; }
+.sig-sub { font-family: var(--mono); font-size: .8rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-top: 1.8rem; }
+.why { list-style: none; padding: 0; display: grid; gap: .6rem; margin-top: .8rem; }
+.why li { border-left: 2px solid rgba(111,199,184,.6); border-radius: 0; padding-left: .8rem; color: var(--muted); }
+.why a, .sig-who a { color: var(--gold); }
+.sig-note { margin-top: 1.2rem; color: var(--muted); max-width: 62ch; }
+.sig-who { margin-top: .9rem; }
+.op-now { color: var(--ivory); }
+.openings.theses { grid-template-columns: 1fr; }
+.op-now b { display: block; font-family: var(--mono); font-size: .76rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: .15rem; }
+.doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .8rem; margin-top: 1.6rem; text-align: left; }
+.door { display: block; border: 1px solid var(--line); border-radius: 14px; padding: 1.05rem 1.15rem; background: rgba(16,24,40,.6); color: var(--ivory); text-decoration: none; }
+.door:hover { border-color: var(--gold); }
+.door b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.08rem; }
+.door span { display: block; margin-top: .3rem; color: var(--muted); font-size: .92rem; }
+@media (max-width: 40rem) {
+  .head-link.soft { display: none; }
+  .sig-grid, .doors { grid-template-columns: 1fr; }
+  .receipt { transform: none; }
+}
 </style>
 </head>
 <body>
@@ -241,8 +268,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <div class="wrap">
     <a class="site-name" href="#main-en"><img class="head-avatar" src="robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
     <span class="head-right">
+      <a class="head-link soft" href="#signals-en">Signals</a>
+      <a class="head-link soft" href="#theses-en">Theses</a>
+      <a class="head-link" href="#contact-en">Work with me</a>
       <button class="lang-btn" type="button" data-set="et" aria-label="Vaheta eesti keelde">ET</button>
-      <a class="head-link" href="#contact-en">Contact</a>
     </span>
   </div>
 </header>
@@ -258,8 +287,74 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <p class="lead">Former climate and renewable energy specialist at an Estonian ministry. I help organizations see what is becoming possible in climate, energy and AI, and turn it into a plan with owners, deadlines and sources, or a tool whose answers stay tied to the source.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-en">Write to me</a>
-        <a class="btn btn-ghost" href="#radar-en">See what’s possible</a>
+        <a class="btn btn-ghost" href="#signals-en">What I’m noticing</a>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="signals-en" aria-labelledby="h-signals-en">
+    <div class="wrap">
+      <p class="kicker">Signal #1</p>
+      <h2 id="h-signals-en">Energy agents need a receipt</h2>
+      <div class="sig-grid">
+        <div>
+          <p class="section-lead">Homes and companies already let software decide when to heat, charge a battery or sell flexibility to the grid. What’s missing is a receipt: what the agent was allowed to do, what it did, and what came of it.</p>
+          <ul class="sig-parts">
+          <li><b>Mandate:</b> what the agent was allowed to do, say at least 20&nbsp;°C indoors and a price cap.</li>
+          <li><b>A receipt for every decision:</b> what it did, why, and the result.</li>
+          <li><b>A timestamp:</b> proof that can’t be changed afterwards.</li>
+          </ul>
+        </div>
+        <div class="receipt" role="img" aria-label="Agent receipt · example">
+          <div class="rc-h">Agent receipt · example</div>
+          <div>14 Jan, 03:00</div>
+          <div>Decision: held heating back for 2 h</div>
+          <div>Reason: peak electricity price</div>
+          <div>Mandate: at least 20 °C indoors <span class="rc-ok">✓</span></div>
+          <div>Result: lower cost · 20.6 °C indoors</div>
+          <div class="rc-f">verifiable · timestamped · agent v1.3</div>
+        </div>
+      </div>
+      <h3 class="sig-sub">Why now</h3>
+      <ul class="why">
+          <li><b>February 2025:</b> the joint Baltic balancing market started. <a href="https://elering.ee/en/node/3821">Elering</a></li>
+          <li><b>9 December 2026:</b> software comes under product liability. <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">Directive (EU) 2024/2853</a></li>
+      </ul>
+      <p class="sig-note">The pieces exist elsewhere: shopping agents that act under signed mandates, and devices that prove delivered flexibility to the grid operator. I haven’t found anyone putting them together for a home or small-business energy agent.</p>
+      <p class="sig-who">Are you an aggregator, a device maker or an insurer? <a href="#contact-en">Write to me.</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="theses-en" aria-labelledby="h-theses-en">
+    <div class="wrap">
+      <p class="kicker">Theses</p>
+      <h2 id="h-theses-en">What I believe will change in the next few years</h2>
+      <p class="section-lead">Each thesis is something I believe, and what to do about it today. Written down on 30 October 2026; I’ll review them in a year.</p>
+      <ul class="openings theses">
+        <li class="opening">
+          <h3>Buildings become batteries</h3>
+          <p>Heat is stored in the hours when power is cheap instead of being produced when it’s expensive. District heating and large buildings start working like a city’s battery.</p>
+          <p class="op-now"><b>What to do now</b>If you’re renewing your heating, plan for storage now.</p>
+          <p class="op-me">I’ve worked on energy from both ends: the technology and the policy.</p>
+          <p class="op-when">Utilitas heat storage at Väo, Tallinn: 1,100&nbsp;MWh · <a href="https://utilitas.ee/en/utilitas-is-building-estonias-largest-heat-storage-facility/">Utilitas</a></p>
+          <p class="op-when" data-date="2028-01-01"><span class="op-date">1 Jan 2028</span> ETS2: carbon price on fuels for buildings and road transport · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Agents get a mandate, not a password</h3>
+          <p>People and companies give software limited rights, like a power of attorney: what it may do, how much, and for how long.</p>
+          <p class="op-now"><b>What to do now</b>Before you deploy an agent, write down its limits.</p>
+          <p class="op-me">I’m mapping who answers when an AI agent gets it wrong.</p>
+          <p class="op-when" data-date="2026-12-09"><span class="op-date">9 Dec 2026</span> Product liability rules start to cover software, including AI · <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">Directive (EU) 2024/2853</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Trust becomes measurable</h3>
+          <p>The winner is whoever can show the customer what their system did and why, not whoever promises the most.</p>
+          <p class="op-now"><b>What to do now</b>Ask your supplier what they can show you about their system’s decisions.</p>
+          <p class="op-me">I built a readiness check that takes its dates from the law, not from the model.</p>
+          <p class="op-when" data-date="2027-12-02"><span class="op-date">2 Dec 2027</span> AI Act: high-risk systems (Annex III) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a> <span class="status"></span></p>
+        </li>
+      </ul>
+      <p class="freshness" data-fresh></p>
     </div>
   </section>
 
@@ -307,50 +402,16 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
     </div>
   </section>
 
-  <section class="block" id="radar-en" aria-labelledby="h-radar-en">
-    <div class="wrap">
-      <p class="kicker">On my radar</p>
-      <h2 id="h-radar-en">What’s becoming possible</h2>
-      <p class="section-lead">Clean power keeps getting cheaper to produce, and AI can already take on real work. Rules mostly decide the timing, not the direction. These are the openings I follow.</p>
-      <ul class="openings">
-        <li class="opening">
-          <h3>Heat from cheap, clean power</h3>
-          <p>When wind and sun produce more than is needed, power gets cheap. Heat pumps, electric boilers and heat storage can use those hours to keep homes and towns warm. A carbon price on heating fuels, coming with ETS2, pushes the same way.</p>
-          <p class="op-me">I’ve worked on energy from both ends: the technology and the policy.</p>
-          <p class="op-when" data-date="2028-01-01"><span class="op-date">1 Jan 2028</span> ETS2: carbon price on fuels for buildings and road transport · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">Reg (EU) 2026/667</a> <span class="status"></span></p>
-        </li>
-        <li class="opening">
-          <h3>Farms that also make energy</h3>
-          <p>Manure and crop residues can become biomethane: local fuel, lower emissions and a second income for the farm.</p>
-          <p class="op-me">I come from agriculture and worked on biomethane at the ministry.</p>
-        </li>
-        <li class="opening">
-          <h3>Small teams with AI agents</h3>
-          <p>AI agents can already read documents, data and rules and do work that used to need a whole department.</p>
-          <p class="op-me">I built a readiness check that takes these dates from the law, not from the model.</p>
-          <p class="op-when" data-date="2027-12-02"><span class="op-date">2 Dec 2027</span> AI Act: high-risk systems (Annex III) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">Reg (EU) 2026/1744</a> <span class="status"></span></p>
-        </li>
-        <li class="opening">
-          <h3>Agents people can trust</h3>
-          <p>AI agents get real work only when people can trust them. That takes evidence: what the agent was allowed to do, and what it actually did.</p>
-          <p class="op-me">I’m mapping who answers when an AI agent gets it wrong.</p>
-          <p class="op-when" data-date="2026-12-09"><span class="op-date">9 Dec 2026</span> Product liability rules start to cover software, including AI · <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">Directive (EU) 2024/2853</a> <span class="status"></span></p>
-        </li>
-      </ul>
-      <p class="freshness" data-fresh></p>
-    </div>
-  </section>
-
   <section class="block contact" id="contact-en" aria-labelledby="h-contact-en">
     <div class="wrap">
-      <p class="kicker">Contact</p>
-      <h2 id="h-contact-en">Write to me with a real question</h2>
-      <ul class="questions">
-        <li><p class="example">“We want to move our heating to electricity and heat storage. What do the coming rules mean for our timing and options?”</p></li>
-        <li><p class="example">“We have an AI agent that works with our documents. How do we make its answers checkable by someone who didn’t build it?”</p></li>
-        <li><p class="example">“We’re rolling out an agent that acts on behalf of our customers. Who is liable if it gets something wrong, and what do we need to log to show it?”</p></li>
-      </ul>
-      <p class="lead">Questions like these mix rules, timing and a technical fix, and usually nobody in the building reads all of them. I can bring them together and tell you what needs doing now and what can wait. Open to a long-term role or a specific project.</p>
+      <p class="kicker">Work with me</p>
+      <h2 id="h-contact-en">Where I can be useful</h2>
+      <p class="lead">Write and tell me what is changing for you. A real question works best.</p>
+      <div class="doors">
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=In%20your%20team"><b>In your team</b><span>A long-term role in strategy, innovation or foresight.</span></a>
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=Project"><b>On a project</b><span>One change, one decision, a fixed deadline. A plan, and a working tool if needed.</span></a>
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=Foresight"><b>As your foresight</b><span>Once a month: what is changing in your field and what is missing.</span></a>
+      </div>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Write to me</a>
@@ -364,7 +425,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
 <footer class="site-foot">
   <div class="wrap">
     <p>Informational only. Nothing on this page is legal advice.</p>
-    <p>Last updated: 22 October 2026 · Robert Kond · Estonia</p>
+    <p>Last updated: 30 October 2026 · Robert Kond · Estonia</p>
   </div>
 </footer>
 </div>
@@ -376,8 +437,10 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
   <div class="wrap">
     <a class="site-name" href="#main-et"><img class="head-avatar" src="robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
     <span class="head-right">
+      <a class="head-link soft" href="#signals-et">Märkamised</a>
+      <a class="head-link soft" href="#theses-et">Teesid</a>
+      <a class="head-link" href="#contact-et">Koostöö</a>
       <button class="lang-btn" type="button" data-set="en" aria-label="Switch to English">EN</button>
-      <a class="head-link" href="#contact-et">Kontakt</a>
     </span>
   </div>
 </header>
@@ -393,8 +456,74 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
       <p class="lead">Endine ministeeriumi kliima- ja taastuvenergia spetsialist. Aitan organisatsioonidel näha, mis kliimas, energias ja AI-s võimalikuks muutub, ning teen sellest plaani, kus on vastutajad, tähtajad ja allikad, või tööriista, mille vastused jäävad algallikaga seotuks.</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="#contact-et">Kirjuta mulle</a>
-        <a class="btn btn-ghost" href="#radar-et">Vaata, mis on võimalik</a>
+        <a class="btn btn-ghost" href="#signals-et">Mida ma märkan</a>
       </div>
+    </div>
+  </section>
+
+  <section class="block" id="signals-et" aria-labelledby="h-signals-et">
+    <div class="wrap">
+      <p class="kicker">Märkamine #1</p>
+      <h2 id="h-signals-et">Energiaagent vajab kviitungit</h2>
+      <div class="sig-grid">
+        <div>
+          <p class="section-lead">Kodud ja ettevõtted lasevad juba tarkvaral otsustada, millal kütta, akut laadida või võrgule paindlikkust müüa. Puudu on kviitung: mida agent tohtis teha, mida ta tegi ja mis sellest tuli.</p>
+          <ul class="sig-parts">
+          <li><b>Volitus:</b> mida agent tohtis teha, näiteks toas vähemalt 20&nbsp;°C ja hinnalagi.</li>
+          <li><b>Kviitung iga otsuse kohta:</b> mida tegi, miks ja mis sellest tuli.</li>
+          <li><b>Ajatempel:</b> tõend, mida ei saa tagantjärele muuta.</li>
+          </ul>
+        </div>
+        <div class="receipt" role="img" aria-label="Agendi kviitung · näide">
+          <div class="rc-h">Agendi kviitung · näide</div>
+          <div>14.01 kell 03:00</div>
+          <div>Otsus: lükkasin kütte 2 h edasi</div>
+          <div>Põhjus: elektri tipphind</div>
+          <div>Volitus: toas vähemalt 20 °C <span class="rc-ok">✓</span></div>
+          <div>Tulemus: väiksem kulu · toas 20,6 °C</div>
+          <div class="rc-f">kontrollitav · ajatempliga · agent v1.3</div>
+        </div>
+      </div>
+      <h3 class="sig-sub">Miks nüüd</h3>
+      <ul class="why">
+          <li><b>Veebruar 2025:</b> Baltikumi ühine tasakaaluturg alustas. <a href="https://elering.ee/en/node/3821">Elering</a></li>
+          <li><b>9. detsember 2026:</b> tarkvara läheb tootevastutuse alla. <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">Direktiiv (EL) 2024/2853</a></li>
+      </ul>
+      <p class="sig-note">Osad on mujal juba olemas: ostuagendid, kes tegutsevad allkirjastatud volitusega, ja seadmed, mis tõendavad võrguettevõttele tarnitud paindlikkust. Kodu või väikefirma energiaagendi jaoks ma nende kokkupanekut ei leidnud.</p>
+      <p class="sig-who">Oled agregaator, seadmetootja või kindlustaja? <a href="#contact-et">Kirjuta mulle.</a></p>
+    </div>
+  </section>
+
+  <section class="block" id="theses-et" aria-labelledby="h-theses-et">
+    <div class="wrap">
+      <p class="kicker">Teesid</p>
+      <h2 id="h-theses-et">Mida ma usun, et järgmistel aastatel muutub</h2>
+      <p class="section-lead">Iga tees on see, mida ma usun, ja mida sellega täna teha. Kirja pandud 30. oktoobril 2026, vaatan aasta pärast üle.</p>
+      <ul class="openings theses">
+        <li class="opening">
+          <h3>Hooned muutuvad akudeks</h3>
+          <p>Soojus salvestatakse odava elektri tundidel, selle asemel et toota seda kallitel. Kaugküte ja suured hooned hakkavad töötama nagu linna aku.</p>
+          <p class="op-now"><b>Mida teha nüüd</b>Kui uuendad kütet, planeeri salvesti kohe.</p>
+          <p class="op-me">Olen energiaga tegelenud mõlemast otsast: tehnika ja poliitika poolelt.</p>
+          <p class="op-when">Utilitase soojussalvesti Väos, Tallinnas: 1 100&nbsp;MWh · <a href="https://utilitas.ee/en/utilitas-is-building-estonias-largest-heat-storage-facility/">Utilitas</a></p>
+          <p class="op-when" data-date="2028-01-01"><span class="op-date">1. jaan 2028</span> ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Agent saab volituse, mitte parooli</h3>
+          <p>Inimesed ja firmad annavad tarkvarale piiratud õigused, nagu volikirja: mida tohib, kui palju ja kui kaua.</p>
+          <p class="op-now"><b>Mida teha nüüd</b>Enne agendi kasutuselevõttu pane kirja tema piirid.</p>
+          <p class="op-me">Kaardistan, kes vastutab, kui AI-agent eksib.</p>
+          <p class="op-when" data-date="2026-12-09"><span class="op-date">9. dets 2026</span> Tootevastutus hakkab katma ka tarkvara, sh AI-d · <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">direktiiv (EL) 2024/2853</a> <span class="status"></span></p>
+        </li>
+        <li class="opening">
+          <h3>Usaldus muutub mõõdetavaks</h3>
+          <p>Võidab see, kes suudab kliendile näidata, mida tema süsteem tegi ja miks, mitte see, kes lubab kõige rohkem.</p>
+          <p class="op-now"><b>Mida teha nüüd</b>Küsi tarnijalt, mida ta sulle oma süsteemi otsuste kohta näitab.</p>
+          <p class="op-me">Ehitasin valmisoleku kontrolli, mis võtab kuupäevad seadusest, mitte mudelist.</p>
+          <p class="op-when" data-date="2027-12-02"><span class="op-date">2. dets 2027</span> AI Act: suure riskiga süsteemid (III lisa) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a> <span class="status"></span></p>
+        </li>
+      </ul>
+      <p class="freshness" data-fresh></p>
     </div>
   </section>
 
@@ -442,50 +571,16 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
     </div>
   </section>
 
-  <section class="block" id="radar-et" aria-labelledby="h-radar-et">
-    <div class="wrap">
-      <p class="kicker">Minu radaril</p>
-      <h2 id="h-radar-et">Mis muutub võimalikuks</h2>
-      <p class="section-lead">Puhta elektri tootmine läheb aina odavamaks ja AI suudab juba päris tööd teha. Reeglid otsustavad enamasti ajastuse, mitte suuna. Need on võimalused, mida ma jälgin.</p>
-      <ul class="openings">
-        <li class="opening">
-          <h3>Soojus odavast puhtast elektrist</h3>
-          <p>Kui tuul ja päike toodavad rohkem, kui parasjagu vaja, läheb elekter odavaks. Soojuspumbad, elektrikatlad ja soojussalvestid saavad neid tunde kasutada, et kodud ja linnad oleksid soojad. Kütuste süsinikuhind, mis tuleb ETS2-ga, lükkab samas suunas.</p>
-          <p class="op-me">Olen energiaga tegelenud mõlemast otsast: tehnika ja poliitika poolelt.</p>
-          <p class="op-when" data-date="2028-01-01"><span class="op-date">1. jaan 2028</span> ETS2: hoonete ja maanteetranspordi kütuste süsinikuhind · <a href="https://eur-lex.europa.eu/eli/reg/2026/667/oj">määrus (EL) 2026/667</a> <span class="status"></span></p>
-        </li>
-        <li class="opening">
-          <h3>Talud, mis toodavad ka energiat</h3>
-          <p>Sõnnikust ja taimejäätmetest saab biometaani: kohalik kütus, väiksem heide ja talule teine sissetulek.</p>
-          <p class="op-me">Tulen põllumajandusest ja tegelesin biometaaniga ministeeriumis.</p>
-        </li>
-        <li class="opening">
-          <h3>Väikesed meeskonnad AI-agentidega</h3>
-          <p>AI-agendid suudavad juba lugeda dokumente, andmeid ja reegleid ning teha tööd, milleks varem oli vaja tervet osakonda.</p>
-          <p class="op-me">Ehitasin valmisoleku kontrolli, mis võtab need kuupäevad seadusest, mitte mudelist.</p>
-          <p class="op-when" data-date="2027-12-02"><span class="op-date">2. dets 2027</span> AI Act: suure riskiga süsteemid (III lisa) · <a href="https://eur-lex.europa.eu/eli/reg/2026/1744/oj">määrus (EL) 2026/1744</a> <span class="status"></span></p>
-        </li>
-        <li class="opening">
-          <h3>Agendid, mida julgeb usaldada</h3>
-          <p>AI-agendid saavad päris töö alles siis, kui neid julgetakse usaldada. Selleks on vaja tõendit: mida agent tohtis teha ja mida ta tegelikult tegi.</p>
-          <p class="op-me">Kaardistan, kes vastutab, kui AI-agent eksib.</p>
-          <p class="op-when" data-date="2026-12-09"><span class="op-date">9. dets 2026</span> Tootevastutus hakkab katma ka tarkvara, sh AI-d · <a href="https://eur-lex.europa.eu/eli/dir/2024/2853/oj">direktiiv (EL) 2024/2853</a> <span class="status"></span></p>
-        </li>
-      </ul>
-      <p class="freshness" data-fresh></p>
-    </div>
-  </section>
-
   <section class="block contact" id="contact-et" aria-labelledby="h-contact-et">
     <div class="wrap">
-      <p class="kicker">Kontakt</p>
-      <h2 id="h-contact-et">Kirjuta mulle päris küsimusega</h2>
-      <ul class="questions">
-        <li><p class="example">„Tahame kütte elektrile ja soojussalvestile üle viia. Mida tulevased reeglid meie ajakavale ja valikutele tähendavad?“</p></li>
-        <li><p class="example">„Meil on AI-agent, mis töötab meie dokumentidega. Kuidas teha nii, et selle vastuseid saab kontrollida ka keegi, kes seda ei ehitanud?“</p></li>
-        <li><p class="example">„Juurutame agendi, mis teeb klientide eest toiminguid. Kes vastutab, kui see eksib, ja mida peame logima, et seda tõendada?“</p></li>
-      </ul>
-      <p class="lead">Sellistes küsimustes on koos reeglid, ajastus ja tehniline lahendus ning tavaliselt ei loe majas keegi kõiki. Mina oskan need kokku viia ja öelda, mis tuleb teha kohe ja mis võib oodata. Olen avatud nii pikaajalisele rollile kui ka konkreetsele projektile.</p>
+      <p class="kicker">Koostöö</p>
+      <h2 id="h-contact-et">Kus saan kasulik olla</h2>
+      <p class="lead">Kirjuta, mis teil muutub. Kõige paremini töötab päris küsimus.</p>
+      <div class="doors">
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=Meeskonnas"><b>Meeskonnas</b><span>Pikaajaline roll strateegia, innovatsiooni või ettevaate juures.</span></a>
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=Projekt"><b>Projektis</b><span>Üks muutus, üks otsus, kindel tähtaeg. Plaan ja vajadusel töötav tööriist.</span></a>
+        <a class="door" href="mailto:acceleratedigitaltwin@gmail.com?subject=Ettevaade"><b>Ettevaatena</b><span>Kord kuus: mis teie valdkonnas muutub ja mis on puudu.</span></a>
+      </div>
       <p class="email-text">acceleratedigitaltwin@gmail.com</p>
       <div class="cta-row">
         <a class="btn btn-gold" href="mailto:acceleratedigitaltwin@gmail.com">Kirjuta mulle</a>
@@ -499,7 +594,7 @@ h1.name { margin-top: 1.3rem; font-size: clamp(2.4rem, 7vw, 3.6rem); max-width: 
 <footer class="site-foot">
   <div class="wrap">
     <p>Ainult informatiivne. Miski sellel lehel ei ole õigusnõustamine.</p>
-    <p>Viimati uuendatud: 22. oktoober 2026 · Robert Kond · Eesti</p>
+    <p>Viimati uuendatud: 30. oktoober 2026 · Robert Kond · Eesti</p>
   </div>
 </footer>
 </div>
