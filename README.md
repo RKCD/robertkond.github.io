@@ -5,7 +5,9 @@ Robert Kondi isiklik leht: https://rkcd.github.io/robertkond.github.io/
 ## Failid
 
 - `index.html` on esileht, `theses.html` on teeside leht. Mõlemas on inglise keel vaikimisi, eesti keel on lülitiga.
-- `site.css` ja `site.js` on mõlema lehe ühine kujundus ja skript (loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine).
+- `site.css` ja `site.js` on mõlema lehe ühine kujundus ja skript (loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine, päringuvorm, analüütika).
+- Päringuvorm ei saada ise midagi: see avab külastaja e-posti rakenduse täidetud kirjaga. Serverit ega andmebaasi pole.
+- Analüütika on välja lülitatud. Sisselülitamiseks loo GoatCounteri konto (küpsisteta) ja pane selle kood `site.js` muutujasse `GOATCOUNTER`. Siis loetakse külastusi, sektsioonide vaatamisi (`view-service`, `view-projects`, `view-radar`, `view-contact`), CTA-klikke (`data-track`) ja päringuvormi avamisi (`inquiry-submit`).
 - `robert-avatar.jpg` on portree, `hero-bg.jpg` hero taust, `og-image.jpg` jagamispilt.
 - `.nojekyll` ütleb GitHub Pagesile, et faile ei töödelda.
 

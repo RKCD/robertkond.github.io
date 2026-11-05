@@ -10,7 +10,10 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - E-post jääb acceleratedigitaltwin@gmail.com.
 - Ministeeriumi tööaastaid lehel ei näidata.
 - Sõna „futurist" ei kasutata. Ettevaade näidatakse kuupäevadega.
-- Leht ei tohi pikemaks minna. Uus asi asendab vana.
+- Esilehel on kuus plokki: hero, probleemid (kaks kella), sprint, ehitatud, radar, kontakt. Uut plokki ei lisata; uus asi asendab vana.
+- Radaril on esilehel kuni neli teemat. Igal teemal on allikas, allika kuupäev ja viimase kontrolli kuupäev. Kontrollimata väidet radarile ei panda.
+- Juhtumiuuringu „Tulemus" rida sisaldab ainult mõõdetud tulemust. Kui mõõtmist pole, on kirjas „pole veel mõõdetud".
+- Hindu, kliente ega kasutajanumbreid ei lisata enne, kui Robert need kinnitab.
 
 ## Hääl
 

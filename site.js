@@ -96,4 +96,65 @@
     var anchor = location.hash && document.getElementById(location.hash.slice(1));
     if (anchor) anchor.scrollIntoView({ behavior: "instant" });
   }
+
+  /* ---------- Privacy-friendly analytics (off until configured) ---------- */
+  // To turn on: create a free GoatCounter site (no cookies, no personal data)
+  // and put its code here, e.g. "robertkond". Empty = nothing is loaded or sent.
+  var GOATCOUNTER = "";
+  function track(name) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "event/" + name, title: name, event: true }); } catch (e) {}
+  }
+  if (GOATCOUNTER) {
+    var gc = document.createElement("script");
+    gc.async = true; gc.src = "https://gc.zgo.at/count.js";
+    gc.setAttribute("data-goatcounter", "https://" + GOATCOUNTER + ".goatcounter.com/count");
+    document.head.appendChild(gc);
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest && e.target.closest("[data-track]");
+    if (t) track(t.getAttribute("data-track"));
+  });
+  // one "view" per section per visit: service, projects, radar, contact
+  if ("IntersectionObserver" in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var k = en.target.getAttribute("data-view");
+        if (en.isIntersecting && !seen[k]) { seen[k] = true; track("view-" + k); }
+      });
+    }, { threshold: 0.35 });
+    document.querySelectorAll("[data-view]").forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Inquiry form: opens the visitor's email app, sends nothing itself ---------- */
+  document.querySelectorAll("form.ask").forEach(function (form) {
+    var et = form.closest(".page").getAttribute("data-lang") === "et";
+    var st = form.querySelector(".form-status");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var bad = null;
+      form.querySelectorAll("[required]").forEach(function (f) {
+        var ok = f.value.trim() !== "" && (f.type !== "email" || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.value.trim()));
+        f.setAttribute("aria-invalid", ok ? "false" : "true");
+        if (!ok && !bad) bad = f;
+      });
+      if (bad) {
+        st.classList.add("err");
+        st.textContent = et ? "Täida palun märgitud väljad." : "Please fill in the marked fields.";
+        bad.focus();
+        return;
+      }
+      var v = function (n) { return form.elements[n].value.trim(); };
+      var subject = (et ? "Päring: " : "Inquiry: ") + v("topic");
+      var body = (et ? "Nimi: " : "Name: ") + v("name") + "\n" +
+                 (v("org") ? (et ? "Organisatsioon: " : "Organization: ") + v("org") + "\n" : "") +
+                 (et ? "E-post: " : "Email: ") + v("email") + "\n" +
+                 (et ? "Teema: " : "Topic: ") + v("topic") + "\n\n" + v("msg");
+      st.classList.remove("err");
+      st.textContent = et ? "Avan e-posti rakenduse. Kui see ei avane, kirjuta aadressile acceleratedigitaltwin@gmail.com."
+                          : "Opening your email app. If nothing opens, write to acceleratedigitaltwin@gmail.com.";
+      track("inquiry-submit");
+      location.href = "mailto:" + addr + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+    });
+  });
 })();
