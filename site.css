@@ -212,6 +212,7 @@ h1.h2 { font-size: clamp(1.5rem, 3.4vw, 1.95rem); line-height: 1.22; margin-bott
 
 /* ---- Service page (ai-nahtavus.html): same sky, one more instrument panel ---- */
 .svc-hero .wrap { max-width: 50rem; }
+section.wide .wrap { max-width: 64rem; }
 .svc-hero .kicker { margin-bottom: 1.1rem; }
 h1.ask { font-size: clamp(2.05rem, 6.4vw, 3.3rem); max-width: 18ch; }
 .svc-hero .lead { color: var(--ivory); opacity: .9; }
