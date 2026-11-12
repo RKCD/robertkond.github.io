@@ -1,0 +1,6 @@
+# Mustandid ja kliendiandmed ei lähe kunagi sellesse avalikku reposse.
+# Hoia need eraldi privaatses repos. See reegel on ainult kaitsevõrk.
+drafts/
+*.draft.*
+mootmised/
+.DS_Store
