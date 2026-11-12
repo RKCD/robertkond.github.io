@@ -49,8 +49,7 @@
       "founder": { "@id": "https://rkcd.github.io/robertkond.github.io/#robert" },
       "address": { "@type": "PostalAddress", "addressCountry": "EE" },
       "areaServed": { "@type": "Country", "name": "Estonia" },
-      "availableLanguage": ["et", "en"],
-      "audience": { "@type": "BusinessAudience", "audienceType": "Eesti küte-, ventilatsiooni-, elektri- ja hooldusettevõtted" },
+      "knowsLanguage": ["et", "en"],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "AI-nähtavuse teenused",
@@ -61,19 +60,19 @@
             "description": "Viis standardküsimust kuni kolmele AI-assistendile ja lühike ülevaade: mida assistendid ettevõtte kohta teavad, mida ei tea ja milliseid allikaid kasutavad.",
             "price": "0",
             "priceCurrency": "EUR",
-            "itemOffered": { "@type": "Service", "name": "AI-nähtavuse test" }
+            "itemOffered": { "@type": "Service", "name": "AI-nähtavuse test", "audience": { "@type": "BusinessAudience", "audienceType": "Eesti küte-, ventilatsiooni-, elektri- ja hooldusettevõtted" } }
           },
           {
             "@type": "Offer",
             "name": "AI-valmis ettevõtteprofiil",
             "description": "Ettevõtte kinnitatud andmetest koostatud profiil inimesele loetava lehena, schema.org JSON-LD märgendusena ning Markdown- ja JSON-failina. Hind pakkumise alusel.",
-            "itemOffered": { "@type": "Service", "name": "AI-valmis ettevõtteprofiil" }
+            "itemOffered": { "@type": "Service", "name": "AI-valmis ettevõtteprofiil", "audience": { "@type": "BusinessAudience", "audienceType": "Eesti küte-, ventilatsiooni-, elektri- ja hooldusettevõtted" } }
           },
           {
             "@type": "Offer",
             "name": "Pidev mõõtmine",
             "description": "Samade küsimuste korduv esitamine, muutuste võrdlus, puuduvate või valesti mõistetud andmete nimekiri ja soovitused. Tulekul.",
-            "itemOffered": { "@type": "Service", "name": "AI-nähtavuse pidev mõõtmine" }
+            "itemOffered": { "@type": "Service", "name": "AI-nähtavuse pidev mõõtmine", "audience": { "@type": "BusinessAudience", "audienceType": "Eesti küte-, ventilatsiooni-, elektri- ja hooldusettevõtted" } }
           }
         ]
       }
