@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rkcd.github.io/robertkond.github.io/docs/mootmine.schema.json",
+  "title": "AI-nähtavuse mõõtmise kirje (kavand v0.1)",
+  "description": "Moodul 2. Üks kirje = üks küsimus ühele platvormile ühel kuupäeval. Mõõtmisseeria (run) koondab kirjed. Fakt (answer_text), vaatlus (observation) ja tõlgendus (interpretation) on eraldi väljad. Päris mõõtmisandmed ei kuulu sellesse avalikku reposse.",
+  "type": "object",
+  "required": ["run_id", "company_id", "date", "records"],
+  "properties": {
+    "run_id": { "type": "string", "description": "nt 2026-11-20_firma_01" },
+    "company_id": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "question_set_version": { "type": "string", "default": "q5-v1" },
+    "previous_run_id": { "type": ["string", "null"], "description": "Võrdluseks (pidev mõõtmine)." },
+    "records": { "type": "array", "items": { "$ref": "#/$defs/record" } },
+    "interpretation": { "type": "string", "description": "Analüütiku tõlgendus kogu seeria kohta. Märgitud tõlgendusena." },
+    "recommendations": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": ["question_type", "question_text", "language", "platform", "asked_at", "answer_text", "observation"],
+      "properties": {
+        "question_type": { "enum": ["brand", "category", "problem", "expertise", "accuracy"] },
+        "question_text": { "type": "string", "description": "Täpne küsimus, nagu see esitati." },
+        "language": { "enum": ["et", "en", "ru"] },
+        "platform": { "type": "string", "description": "nt ChatGPT, Gemini, Claude, Perplexity" },
+        "platform_mode": { "type": "string", "description": "Mudel, veebiotsing sees/väljas, sisse logitud või mitte; kui teada." },
+        "asked_at": { "type": "string", "format": "date-time" },
+        "answer_text": { "type": "string", "description": "FAKT: vastus sõna-sõnalt." },
+        "sources_cited": { "type": "array", "items": { "type": "string" } },
+        "companies_named": { "type": "array", "items": { "type": "string" }, "description": "Sisemiseks kasutuseks. Avalikult ilma loata ei avaldata." },
+        "observation": {
+          "type": "object",
+          "description": "VAATLUS",
+          "required": ["company_mentioned", "info_quality"],
+          "properties": {
+            "company_mentioned": { "type": "boolean" },
+            "info_quality": { "enum": ["correct", "incomplete", "wrong", "not_applicable"] },
+            "errors": {
+              "type": "array",
+              "items": { "type": "object", "properties": { "field": { "type": "string" }, "said": { "type": "string" }, "correct": { "type": "string" } } }
+            }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}
