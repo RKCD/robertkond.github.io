@@ -1,19 +1,16 @@
 # Robert Kond
 
-> Robert Kond on Eestis tegutsev ehitaja, kes teeb AI-tööriistu, mille väited on seotud allikaga. Põhiteenus on AI-nähtavus ja agendivalmidus Eesti tehniliste teenuste ettevõtetele (küte, ventilatsioon, elekter, hooldus): mõõtmine, kuidas AI-assistendid ettevõtet leiavad ja mõistavad, info korrastamine ja masinloetav ettevõtteprofiil.
+> Robert Kond on Eestis tegutsev ehitaja, kes teeb AI-tööriistu, mille väited on seotud allikaga. Tema teenus AI-nähtavus ja agendivalmidus on eraldi lehel.
 
-Robert Kond builds AI tools whose claims are tied to a source. His main service is AI Visibility & Agent Readiness for technical service companies in Estonia. The service does not promise that any AI system will recommend a client.
+Robert Kond builds AI tools whose claims are tied to a source. Background in climate and energy policy at an Estonian ministry, software testing and IT infrastructure.
 
 Kontakt / contact: acceleratedigitaltwin@gmail.com
-Teeninduspiirkond / area served: Eesti / Estonia
-Keeled / languages: eesti, English
 Viimati uuendatud / last updated: 2026-11-12
 
 ## Teenus / Service
 
-- [AI-nähtavus ja agendivalmidus](https://rkcd.github.io/robertkond.github.io/ai-nahtavus.html): teenuseleht eesti keeles; inglise keeles `?lang=en`
-- [Teenuste kirjeldus (Markdown)](https://rkcd.github.io/robertkond.github.io/teenused.md): kolm teenuseastet, mida klient saab ja mida teenus ei luba
-- [Mõõtmismetoodika](https://rkcd.github.io/robertkond.github.io/ai-nahtavus.html#metoodika-et): viis standardküsimust ja salvestatavad väljad
+- [AI-nähtavus ja agendivalmidus](https://rkcd.github.io/ai-nahtavus/): how AI assistants find and understand technical service companies in Estonia; free test, AI-ready company profile, ongoing measurement
+- [Service summary (llms.txt)](https://rkcd.github.io/ai-nahtavus/llms.txt)
 
 ## Tööd / Work
 
@@ -22,5 +19,4 @@ Viimati uuendatud / last updated: 2026-11-12
 
 ## Optional
 
-- [Avaleht / front page](https://rkcd.github.io/robertkond.github.io/)
 - [Teesid / theses](https://rkcd.github.io/robertkond.github.io/theses.html): three theses written on 2026-10-30, to be checked on 2027-10-30

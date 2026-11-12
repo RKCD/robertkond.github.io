@@ -1,6 +1,8 @@
 # robertkond.github.io
 
-Robert Kondi leht ja AI-nähtavuse teenus: https://rkcd.github.io/robertkond.github.io/
+Robert Kondi isiklik leht: https://rkcd.github.io/robertkond.github.io/
+
+AI-nähtavuse teenus elab eraldi repos `RKCD/ai-nahtavus`: https://rkcd.github.io/ai-nahtavus/
 
 ## Arhitektuur
 
@@ -9,13 +11,10 @@ Puhas staatiline leht GitHub Pagesis. Build-sammu, raamistikku ega sõltuvusi po
 | Fail | Mis see on |
 |---|---|
 | `index.html` | Isiklik avaleht. Inglise keel vaikimisi, eesti keel lülitiga (`?lang=et`). |
-| `ai-nahtavus.html` | AI-nähtavuse teenuse leht. Eesti keel vaikimisi, inglise keel `?lang=en`. JSON-LD on `<head>`-is. |
 | `theses.html` | Teesid. Inglise keel vaikimisi. |
-| `blog/index.html` | Mõõtmiste register. `blog/post-template.html` on artikli mall (noindex, linkimata). |
-| `llms.txt` | Lühike masinloetav ülevaade lehest ja teenusest. |
-| `teenused.md` | Teenuste kirjeldus Markdownis, inimesele ja masinale. |
-| `docs/` | Arhitektuur (`ARHITEKTUUR.md`) ning profiili ja mõõtmise andmeskeemide kavandid. |
-| `site.css`, `site.js` | Ühine kujundus ja skript: loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine, tellimisvorm. |
+| `llms.txt` | Lühike masinloetav ülevaade lehest. |
+| `ai-nahtavus.html` | Ümbersuunamine teenuse uuele saidile (vanad lingid töötavad edasi). |
+| `site.css`, `site.js` | Ühine kujundus ja skript: loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine. `site.css` ja `site.js` on ühise päritoluga teenuse saidiga. |
 | `robert-avatar.jpg`, `hero-bg.jpg`, `og-image.jpg` | Pildid. |
 
 **Keeled.** Mõlemad keeled on samas failis kahe plokina (`<div class="page" data-lang="…">`). Lehe vaikekeel on `<html data-default-lang="…">` atribuudis, puudumisel inglise keel. Teise keele saab avada `?lang=xx` või `-xx` lõpuga ankruga (`#test-en`).
@@ -27,8 +26,7 @@ Puhas staatiline leht GitHub Pagesis. Build-sammu, raamistikku ega sõltuvusi po
 1. Muuda faili. Iga tekstimuudatus tuleb teha mõlemas keeleplokis.
 2. Vaata kohapeal: `npx serve .` või `python3 -m http.server`, ava http://localhost:3000 või :8000.
 3. Kontrolli 375 px ja töölaua laiusel: külgkerimist pole, konsool on puhas, keelelüliti töötab.
-4. Kui muutsid `ai-nahtavus.html` teenuste sisu, uuenda samas JSON-LD-d, `llms.txt` ja `teenused.md`.
-5. Uuenda jaluses kuupäeva.
+4. Uuenda jaluses kuupäeva.
 
 ## Testimine
 

@@ -10,7 +10,7 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - E-post jääb acceleratedigitaltwin@gmail.com.
 - Ministeeriumi tööaastaid lehel ei näidata.
 - Sõna „futurist" ei kasutata. Ettevaade näidatakse kuupäevadega.
-- Avaleht (`index.html`) ei tohi pikemaks minna. Uus asi asendab vana. Teenuse sisu on `ai-nahtavus.html` lehel.
+- Avaleht (`index.html`) ei tohi pikemaks minna. Uus asi asendab vana. Teenuse sisu on eraldi saidil.
 
 ## Hääl
 
@@ -24,16 +24,9 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - Teemasildid triivivad portree poole ja kaovad teksti juures. Kui külastaja on liikumise välja lülitanud, jääb pilt paigale.
 - Enne pushi kontrolli 375px ja töölaua laiusel. Lehel ei tohi olla külgkerimist ja konsool peab olema puhas.
 
-## AI-nähtavuse teenus (`ai-nahtavus.html`)
+## AI-nähtavuse teenus
 
-- Teenuselehel võib olla selge müügisõnum ja üleskutse, aga sama häälega: lühikesed laused, ei hüüumärke ega superlatiive.
-- Ära luba, et mõni AI hakkab klienti soovitama, ega otsingupositsioone või müügitulemusi. Schema.org ja llms.txt ei ole garantii.
-- Ära avalda hindu peale „tasuta". Ära lisa kliente, logosid, iseloomustusi ega mõõtmistulemusi, mida pole päriselt olnud.
-- JSON-LD peab vastama lehel nähtavale tekstile. Kui muudad teenuste sisu, uuenda ka JSON-LD-d, `llms.txt` ja `teenused.md`.
-- AI vastuseid ei esitata faktina. Mõõtmistulemustes on fakt, vaatlus ja tõlgendus eraldi.
-- Teiste ettevõtete nimesid, mis mõõtmistes esinevad, ei avaldata ilma loata.
-- Mustandid, mõõtmisandmed ja kliendiprofiilid ei kuulu sellesse avalikku reposse.
-- Ära väida, et teenus on õiguslikult või GDPR-i mõttes auditeeritud.
+- Teenus elab eraldi repos `RKCD/ai-nahtavus` (https://rkcd.github.io/ai-nahtavus/) ja sellel on oma reeglid. Siin lehel sellele ainult lingitakse.
 
 ## Töökord
 
