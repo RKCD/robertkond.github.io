@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+  ARTIKLI MALL. Kopeeri faili blog/AAAA-KK-PP-luhinimi.html, täida {{…}} kohad, eemalda see kommentaar.
+  Enne commit'i:
+   1. Iga AI vastus on salvestatud koos kuupäeva, platvormi, keele ja täpse küsimusega (docs/mootmine.schema.json).
+   2. Fakt, vaatlus ja tõlgendus on eraldi plokkides.
+   3. Teiste ettevõtete nimed on eemaldatud või nende luba on olemas.
+   4. Mõlemad keeleplokid on sisuliselt täielikud.
+   5. Lisa artikkel blog/index.html registrisse.
+  Mall ise on noindex ja registrist linkimata.
+-->
+<html lang="et" data-default-lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>{{Pealkiri}} · Robert Kond</title>
+<meta name="description" content="{{Üks lause: mida mõõdeti ja millal}}">
+<meta name="theme-color" content="#0A0F1C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="stars-static" aria-hidden="true"></div>
+
+<div class="page" data-lang="et" lang="et">
+<a class="skip-link" href="#main-et">Hüppa sisu juurde</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../?lang=et"><img class="head-avatar" src="../robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
+    <span class="head-right">
+      <a class="head-link soft" href="./">Mõõtmised</a>
+      <a class="head-link" href="../ai-nahtavus.html#test-et">Tasuta test</a>
+      <button class="lang-btn" type="button" data-set="en" aria-label="Switch to English">EN</button>
+    </span>
+  </div>
+</header>
+<main id="main-et">
+  <article class="block top" aria-labelledby="h-post-et">
+    <div class="wrap">
+      <p class="kicker">Mõõtmine · {{PP. kuu AAAA}}</p>
+      <h1 id="h-post-et" class="h2">{{Pealkiri}}</h1>
+      <p class="section-lead">{{Kaks lauset: mida küsisime, kellelt ja miks.}}</p>
+
+      <h2 class="h3">Kuidas mõõtsime</h2>
+      <ul class="fields"><li>kuupäev: {{AAAA-KK-PP}}</li><li>platvormid: {{…}}</li><li>keel: {{et}}</li><li>küsimusi: {{5}}</li></ul>
+
+      <h2 class="h3">Fakt</h2>
+      <p>{{Mida assistendid sõna-sõnalt vastasid. Tsitaadid koos platvormi nimega.}}</p>
+
+      <h2 class="h3">Vaatlus</h2>
+      <p>{{Mida vastustest on näha: mainimised, õige/puudulik/vale, allikad.}}</p>
+
+      <h2 class="h3">Tõlgendus</h2>
+      <p>{{Meie hinnang ja selle piirid.}}</p>
+
+      <div class="limits"><b class="label">Piirangud</b><ul><li>AI vastused muutuvad päevast päeva.</li><li>Väike valim ei ole statistiliselt esinduslik.</li></ul></div>
+      <p class="more"><a href="./">← Kõik mõõtmised</a></p>
+    </div>
+  </article>
+</main>
+<footer class="site-foot"><div class="wrap"><p>Avaldatud: {{PP. kuu AAAA}} · Robert Kond · Eesti</p></div></footer>
+</div>
+
+<div class="page" data-lang="en" lang="en" hidden>
+<a class="skip-link" href="#main-en">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../"><img class="head-avatar" src="../robert-avatar.jpg" alt="" width="30" height="30">Robert Kond</a>
+    <span class="head-right">
+      <a class="head-link soft" href="./?lang=en">Measurements</a>
+      <a class="head-link" href="../ai-nahtavus.html?lang=en#test-en">Free test</a>
+      <button class="lang-btn" type="button" data-set="et" aria-label="Vaheta eesti keelde">ET</button>
+    </span>
+  </div>
+</header>
+<main id="main-en">
+  <article class="block top" aria-labelledby="h-post-en">
+    <div class="wrap">
+      <p class="kicker">Measurement · {{D Month YYYY}}</p>
+      <h1 id="h-post-en" class="h2">{{Title}}</h1>
+      <p class="section-lead">{{Two sentences: what we asked, whom, and why.}}</p>
+      <h2 class="h3">How we measured</h2>
+      <ul class="fields"><li>date: {{YYYY-MM-DD}}</li><li>platforms: {{…}}</li><li>language: {{et}}</li><li>questions: {{5}}</li></ul>
+      <h2 class="h3">Fact</h2>
+      <p>{{What the assistants answered, word for word, with the platform named.}}</p>
+      <h2 class="h3">Observation</h2>
+      <p>{{What the answers show: mentions, correct/incomplete/wrong, sources.}}</p>
+      <h2 class="h3">Interpretation</h2>
+      <p>{{Our view and its limits.}}</p>
+      <div class="limits"><b class="label">Limits</b><ul><li>AI answers change from day to day.</li><li>A small sample is not statistically representative.</li></ul></div>
+      <p class="more"><a href="./?lang=en">← All measurements</a></p>
+    </div>
+  </article>
+</main>
+<footer class="site-foot"><div class="wrap"><p>Published: {{D Month YYYY}} · Robert Kond · Estonia</p></div></footer>
+</div>
+
+<script src="../site.js"></script>
+</body>
+</html>
