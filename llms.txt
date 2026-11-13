@@ -1,0 +1,22 @@
+# Robert Kond
+
+> Robert Kond on Eestis tegutsev ehitaja, kes teeb AI-tööriistu, mille väited on seotud allikaga. Tema teenus AI-nähtavus ja agendivalmidus on eraldi lehel.
+
+Robert Kond builds AI tools whose claims are tied to a source. Background in climate and energy policy at an Estonian ministry, software testing and IT infrastructure.
+
+Kontakt / contact: acceleratedigitaltwin@gmail.com
+Viimati uuendatud / last updated: 2026-11-12
+
+## Teenus / Service
+
+- [AI-nähtavus ja agendivalmidus](https://rkcd.github.io/ai-nahtavus/): how AI assistants find and understand technical service companies in Estonia; free test, AI-ready company profile, ongoing measurement
+- [Service summary (llms.txt)](https://rkcd.github.io/ai-nahtavus/llms.txt)
+
+## Tööd / Work
+
+- [EU AI Act Readiness Check](https://eu-ai-act-checker.onrender.com): what the EU AI Act means for an AI system and by when; dates come from code and a dated legal corpus, not from the model; access by invitation
+- [Agentide vastutuse kaart Eestis](https://rkcd.github.io/agentide-vastutus/): seven situations where an AI agent gets something wrong, which rules apply and who is liable; in Estonian; not legal advice
+
+## Optional
+
+- [Teesid / theses](https://rkcd.github.io/robertkond.github.io/theses.html): three theses written on 2026-10-30, to be checked on 2027-10-30

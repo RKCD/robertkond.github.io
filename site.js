@@ -71,14 +71,32 @@
     });
   });
 
+  /* ---------- Free test order: builds a mailto, stores nothing ---------- */
+  document.querySelectorAll("form.order").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      var lines = [];
+      form.querySelectorAll("[data-label]").forEach(function (f) {
+        lines.push(f.getAttribute("data-label") + ": " + (f.value.trim() || "-"));
+      });
+      var body = (form.getAttribute("data-intro") || "") + "\n\n" + lines.join("\n") + "\n";
+      location.href = "mailto:" + addr + "?subject=" + encodeURIComponent(form.getAttribute("data-subject")) + "&body=" + encodeURIComponent(body);
+      var st = form.querySelector(".order-status");
+      if (st) st.textContent = form.getAttribute("data-sent") || "";
+    });
+  });
+
   /* ---------- Language toggle ---------- */
+  // Each page names its default language on <html data-default-lang>; English if missing.
+  // The other language gets ?lang=xx in the address bar, the default gets a clean URL.
+  var DEF = document.documentElement.getAttribute("data-default-lang") || "en";
   function setLang(target, initial) {
     document.querySelectorAll(".page[data-lang]").forEach(function (p) { p.hidden = p.getAttribute("data-lang") !== target; });
     document.documentElement.lang = target;
-    // keep the address bar shareable: ?lang=et for Estonian, clean URL for English
     try {
       var u = new URL(location.href);
-      if (target === "et") u.searchParams.set("lang", "et"); else u.searchParams.delete("lang");
+      if (target === DEF) u.searchParams.delete("lang"); else u.searchParams.set("lang", target);
       history.replaceState(null, "", u.pathname + u.search + (initial ? u.hash : ""));
     } catch (e) {}
   }
@@ -89,10 +107,11 @@
       var b = visible().querySelector(".lang-btn"); if (b) b.focus();
     });
   });
-  // a link can ask for Estonian: ?lang=et, or an anchor that ends in -et (#contact-et)
-  var wantsEt = /[?&]lang=et\b/.test(location.search) || /-et$/.test(location.hash);
-  if (wantsEt) {
-    setLang("et", true);
+  // a link can ask for a language: ?lang=et / ?lang=en, or an anchor that ends in -et / -en (#contact-et)
+  var q = location.search.match(/[?&]lang=(en|et)\b/), h = location.hash.match(/-(en|et)$/);
+  var want = q ? q[1] : h ? h[1] : DEF;
+  if (want !== DEF) {
+    setLang(want, true);
     var anchor = location.hash && document.getElementById(location.hash.slice(1));
     if (anchor) anchor.scrollIntoView({ behavior: "instant" });
   }

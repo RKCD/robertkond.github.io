@@ -10,7 +10,7 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - E-post jääb acceleratedigitaltwin@gmail.com.
 - Ministeeriumi tööaastaid lehel ei näidata.
 - Sõna „futurist" ei kasutata. Ettevaade näidatakse kuupäevadega.
-- Leht ei tohi pikemaks minna. Uus asi asendab vana.
+- Avaleht (`index.html`) ei tohi pikemaks minna. Uus asi asendab vana. Teenuse sisu on eraldi saidil.
 
 ## Hääl
 
@@ -23,3 +23,13 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - Öötaevas, üks kuldne aktsent. Hoia see vaoshoitud ja ära tee seda kirjuks.
 - Teemasildid triivivad portree poole ja kaovad teksti juures. Kui külastaja on liikumise välja lülitanud, jääb pilt paigale.
 - Enne pushi kontrolli 375px ja töölaua laiusel. Lehel ei tohi olla külgkerimist ja konsool peab olema puhas.
+
+## AI-nähtavuse teenus
+
+- Teenus elab eraldi repos `RKCD/ai-nahtavus` (https://rkcd.github.io/ai-nahtavus/) ja sellel on oma reeglid. Siin lehel sellele ainult lingitakse.
+
+## Töökord
+
+- Töö käib feature branch'is. `main` harusse ei push'ita ilma Roberti loata.
+- Väikesed, loogilised commit'id.
+- Uut tehnoloogiat (raamistik, backend, andmebaas) ei lisata ilma põhjenduseta `docs/ARHITEKTUUR.md` alusel.

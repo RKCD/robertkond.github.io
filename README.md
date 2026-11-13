@@ -2,19 +2,45 @@
 
 Robert Kondi isiklik leht: https://rkcd.github.io/robertkond.github.io/
 
-## Failid
+AI-nähtavuse teenus elab eraldi repos `RKCD/ai-nahtavus`: https://rkcd.github.io/ai-nahtavus/
 
-- `index.html` on esileht, `theses.html` on teeside leht. Mõlemas on inglise keel vaikimisi, eesti keel on lülitiga.
-- `site.css` ja `site.js` on mõlema lehe ühine kujundus ja skript (loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine).
-- `robert-avatar.jpg` on portree, `hero-bg.jpg` hero taust, `og-image.jpg` jagamispilt.
-- `.nojekyll` ütleb GitHub Pagesile, et faile ei töödelda.
+## Arhitektuur
 
-## Muutmine
+Puhas staatiline leht GitHub Pagesis. Build-sammu, raamistikku ega sõltuvusi pole. `.nojekyll` ütleb Pagesile, et faile ei töödelda, seega **iga repos olev fail on avalikult URL-iga kättesaadav**.
 
-1. Muuda `index.html` või `theses.html`. Iga tekstimuudatus tuleb teha mõlemas keeleplokis (`data-lang="en"` ja `data-lang="et"`).
-2. Vaata lehte kohapeal: `npx serve .` ja ava http://localhost:3000.
-3. Kontrolli 375px laiusel, et lehel pole külgkerimist ja konsool on puhas.
-4. Uuenda jaluses kuupäeva „Last updated" / „Viimati uuendatud".
-5. Tee commit ja push harusse `main`. GitHub Pages avaldab lehe umbes minutiga.
+| Fail | Mis see on |
+|---|---|
+| `index.html` | Isiklik avaleht. Inglise keel vaikimisi, eesti keel lülitiga (`?lang=et`). |
+| `theses.html` | Teesid. Inglise keel vaikimisi. |
+| `llms.txt` | Lühike masinloetav ülevaade lehest. |
+| `ai-nahtavus.html` | Ümbersuunamine teenuse uuele saidile (vanad lingid töötavad edasi). |
+| `site.css`, `site.js` | Ühine kujundus ja skript: loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine. `site.css` ja `site.js` on ühise päritoluga teenuse saidiga. |
+| `robert-avatar.jpg`, `hero-bg.jpg`, `og-image.jpg` | Pildid. |
+
+**Keeled.** Mõlemad keeled on samas failis kahe plokina (`<div class="page" data-lang="…">`). Lehe vaikekeel on `<html data-default-lang="…">` atribuudis, puudumisel inglise keel. Teise keele saab avada `?lang=xx` või `-xx` lõpuga ankruga (`#test-en`).
+
+**Tellimisvorm.** `form.order` koostab eeltäidetud `mailto:`-lingi ega salvesta midagi. Ilma JavaScriptita saadab brauser vormi `mailto` kaudu.
+
+## Muutmine ja käivitamine
+
+1. Muuda faili. Iga tekstimuudatus tuleb teha mõlemas keeleplokis.
+2. Vaata kohapeal: `npx serve .` või `python3 -m http.server`, ava http://localhost:3000 või :8000.
+3. Kontrolli 375 px ja töölaua laiusel: külgkerimist pole, konsool on puhas, keelelüliti töötab.
+4. Uuenda jaluses kuupäeva.
+
+## Testimine
+
+- **Struktureeritud andmed:** kleebi lehe URL või HTML https://validator.schema.org/ ja Google Rich Results Testi. JSON-LD peab vastama lehel nähtavale tekstile: ei mingeid hindu peale tasuta testi, hinnanguid ega kliente.
+- **Mobiil ja keeled:** Playwright või brauseri arendustööriistad, 375 px. Ava iga leht nii vaike- kui ka teises keeles.
+- **Lingid:** kõik sisemised lingid ja ankrud peavad avanema mõlemas keeles.
+- **Tellimisvorm:** täida ja vajuta nuppu. E-posti programm peab avanema eeltäidetud kirjaga.
+
+## Avaldamine
+
+Töö käib feature branch'is (nt `feature/ai-visibility`). `main` harusse lähevad muudatused ainult Roberti loal, pull request'i kaudu. GitHub Pages avaldab `main` haru umbes minutiga.
+
+## Mustandid ja kliendiandmed
+
+Repo on avalik. Mõõtmisandmed, kliendiprofiilid ja artiklimustandid **ei tohi sellesse reposse sattuda**, ka mitte linkimata kujul: need oleksid GitHubis ja Pagesis avalikud. Hoia neid eraldi privaatses repos. `.gitignore` blokeerib `drafts/` ja `mootmised/` kaustad ainult kaitsevõrguna.
 
 Sisureeglid AI-toimetajale on failis [CLAUDE.md](CLAUDE.md).
