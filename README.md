@@ -12,6 +12,7 @@ Puhas staatiline leht GitHub Pagesis. Build-sammu, raamistikku ega sõltuvusi po
 |---|---|
 | `index.html` | Isiklik avaleht. Inglise keel vaikimisi, eesti keel lülitiga (`?lang=et`). |
 | `theses.html` | Teesid. Inglise keel vaikimisi. |
+| `muutused/` | Muutusekaartide blogi. Eesti keel vaikimisi, inglise keel `?lang=en`. `index.html` on loend, iga kaart on eraldi fail. |
 | `llms.txt` | Lühike masinloetav ülevaade lehest. |
 | `ai-nahtavus.html` | Ümbersuunamine teenuse uuele saidile (vanad lingid töötavad edasi). |
 | `site.css`, `site.js` | Ühine kujundus ja skript: loendurid, kuupäevade värskus, keelelüliti, e-posti kopeerimine. `site.css` ja `site.js` on ühise päritoluga teenuse saidiga. |
@@ -20,6 +21,21 @@ Puhas staatiline leht GitHub Pagesis. Build-sammu, raamistikku ega sõltuvusi po
 **Keeled.** Mõlemad keeled on samas failis kahe plokina (`<div class="page" data-lang="…">`). Lehe vaikekeel on `<html data-default-lang="…">` atribuudis, puudumisel inglise keel. Teise keele saab avada `?lang=xx` või `-xx` lõpuga ankruga (`#test-en`).
 
 **Tellimisvorm.** `form.order` koostab eeltäidetud `mailto:`-lingi ega salvesta midagi. Ilma JavaScriptita saadab brauser vormi `mailto` kaudu.
+
+## Muutusekaardid
+
+Muutusekaart on esimene müüdav teenus. Blogi kaardid on tasuta näidised: iga kaart lõpeb tellimisplokiga (`#order-et`, `#order-en`).
+
+Iga kaardi ülesehitus:
+1. Pealkiri ja üks lõik: mis muutub ja millal (`data-date` loendur).
+2. **Mis muutub:** faktid koos artikliga. Ainult esmaallikast kontrollitud.
+3. **Keda see puudutab:** puudutab, puudutab vähem, ei puuduta.
+4. **Praktilised sammud:** tabel samm, kes, millal. Märge, et see pole õigusnõu.
+5. **Mida veel ei tea:** kontrollimata asjad, märgitud `<span class="tag-unchecked">`.
+6. **Allikad:** link, artiklid ja kontrollikuupäev.
+7. Tellimisplokk.
+
+Uus kaart: kopeeri olemasolev fail, muuda mõlemas keeles, lisa kaart `muutused/index.html` loendisse mõlemas keeles. Teemakandidaadid tulevad agentide vastutuse kaardi radari inboxist (`RKCD/agentide-vastutus/inbox/`).
 
 ## Muutmine ja käivitamine
 

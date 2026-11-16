@@ -24,6 +24,12 @@ See on Robert Kondi avalik visiitkaart. Iga lause on tema nimel öeldud väide.
 - Teemasildid triivivad portree poole ja kaovad teksti juures. Kui külastaja on liikumise välja lülitanud, jääb pilt paigale.
 - Enne pushi kontrolli 375px ja töölaua laiusel. Lehel ei tohi olla külgkerimist ja konsool peab olema puhas.
 
+## Muutusekaardid (`muutused/`)
+
+- Muutusekaardi faktid tulevad esmaallikast ja kontrollikuupäev on nähtav. Kontrollimata väide on märgitud „kontrollimata". Teisest allikast võetud fakt ei ole kontrollitud.
+- Praktilised sammud on soovitused, mitte õigusnõuded. See on kaardil kirjas.
+- Hindu, kliente ega tellimuste arvu ei avaldata enne Roberti kinnitust.
+
 ## AI-nähtavuse teenus
 
 - Teenus elab eraldi repos `RKCD/ai-nahtavus` (https://rkcd.github.io/ai-nahtavus/) ja sellel on oma reeglid. Siin lehel sellele ainult lingitakse.

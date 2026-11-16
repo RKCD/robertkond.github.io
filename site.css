@@ -209,3 +209,33 @@ h1.h2 { font-size: clamp(1.5rem, 3.4vw, 1.95rem); line-height: 1.22; margin-bott
   .sig-grid, .doors { grid-template-columns: 1fr; }
   .receipt { transform: none; }
 }
+
+/* ---- Change maps (muutused/) ---- */
+.cta-row.left { justify-content: flex-start; }
+.post .map-h { font-size: 1.25rem; margin: 2.2rem 0 .9rem; max-width: none; }
+.map-when { font-family: var(--mono); font-size: .85rem; color: var(--muted); margin-top: -.4rem; }
+.map-when .status { margin-left: .3rem; }
+.map-list { padding-left: 1.1rem; display: grid; gap: .55rem; color: var(--ivory); }
+.map-list b { color: var(--gold); font-weight: 600; }
+.map-note { font-size: .9rem; color: var(--muted); margin-bottom: .8rem; }
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+.map-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.map-table th { text-align: left; font-family: var(--mono); font-size: .76rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); padding: .7rem .9rem; border-bottom: 1px solid var(--line); background: rgba(16,24,40,.6); }
+.map-table td { padding: .7rem .9rem; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--ivory); }
+.map-table td + td { color: var(--muted); white-space: nowrap; }
+.map-table tr:last-child td { border-bottom: 0; }
+.tag-unchecked { font-family: var(--mono); font-size: .74rem; color: var(--warn); border: 1px solid rgba(232,163,163,.45); border-radius: 4px; padding: .05rem .4rem; white-space: nowrap; }
+.map-src { list-style: none; padding: 0; display: grid; gap: .5rem; font-family: var(--mono); font-size: .82rem; color: var(--muted); line-height: 1.7; }
+.order { margin-top: 2.8rem; padding: 1.4rem 1.4rem 1.2rem; border: 1px solid rgba(230,194,125,.45); border-radius: 14px; background: rgba(230,194,125,.06); }
+.order h2 { font-size: 1.3rem; margin-bottom: .6rem; }
+.order p { color: var(--ivory); max-width: 60ch; }
+.order .cta-row { margin-top: 1.2rem; }
+.post-list { list-style: none; padding: 0; display: grid; gap: .9rem; margin-top: 1.4rem; }
+.post-card { display: grid; gap: .3rem; border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; background: rgba(16,24,40,.6); color: var(--ivory); text-decoration: none; }
+.post-card:hover { border-color: var(--gold); color: var(--ivory); }
+.post-card b { font-family: var(--display); font-weight: 600; font-size: 1.15rem; }
+.post-card span:last-child { color: var(--muted); font-size: .95rem; }
+.post-meta { font-family: var(--mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); }
+@media (max-width: 40rem) {
+  .map-table td + td { white-space: normal; }
+}
